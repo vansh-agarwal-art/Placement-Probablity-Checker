@@ -141,7 +141,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .fsn-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:.68rem;color:var(--text2);line-height:1.5;}
 .fsn-item:last-child{border-bottom:none;}
 .fsn-item strong{color:var(--green);}
-.form-main{padding:32px 48px;max-width:720px;}
+.form-main{padding:32px 48px;}
 .prog-wrap{margin-bottom:32px;}
 .prog-meta{display:flex;justify-content:space-between;margin-bottom:8px;}
 .prog-lbl{font-family:var(--mono);font-size:.6rem;color:var(--text2);letter-spacing:.1em;}
@@ -273,6 +273,85 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
 .cfi{position:fixed;pointer-events:none;z-index:999;animation:cfiFall linear forwards;}
 @keyframes cfiFall{0%{opacity:1;transform:translate(0,0) rotate(0deg)}100%{opacity:0;transform:translate(var(--tx),110vh) rotate(var(--r))}}
 
+.field-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.field-opt{padding:16px 12px;background:var(--surface);border:1px solid var(--border);text-align:center;cursor:pointer;transition:all .2s;}
+.field-opt:hover{border-color:var(--border2);background:var(--card);}
+.field-opt.sel{border-color:var(--blue);background:var(--blue-dim);}
+.fo-icon{font-size:1.6rem;margin-bottom:6px;}
+.fo-title{font-size:.78rem;font-weight:600;color:var(--text);margin-bottom:3px;}
+.fo-sub{font-size:.62rem;color:var(--text2);}
+@media(max-width:900px){.field-grid{grid-template-columns:repeat(2,1fr);}.roadmap-layout{grid-template-columns:1fr;}.roadmap-sidebar{display:none;}.phase-body{grid-template-columns:1fr;}}
+
+.roadmap-layout{display:grid;grid-template-columns:260px 1fr;gap:0;min-height:calc(100vh - 80px);}
+.roadmap-sidebar{border-right:1px solid var(--border);background:var(--surface);padding:24px 0;position:sticky;top:48px;height:calc(100vh - 48px);overflow-y:auto;}
+.rms-section{padding:0 16px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.rms-head{font-family:var(--mono);font-size:.58rem;color:var(--text3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;}
+.field-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--blue-dim);border:1px solid var(--border2);width:100%;margin-bottom:12px;}
+.field-icon{font-size:1.4rem;}
+.field-title{font-size:.85rem;font-weight:600;color:var(--text);}
+.field-sub{font-size:.65rem;color:var(--text2);margin-top:2px;}
+.rms-gap-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(56,139,253,.06);}
+.rms-gap-label{font-size:.7rem;color:var(--text2);}
+.rms-gap-val{font-family:var(--mono);font-size:.7rem;font-weight:500;}
+.rms-gap-val.ok{color:var(--green);}.rms-gap-val.warn{color:var(--amber);}.rms-gap-val.bad{color:var(--red);}
+.phase-nav-item{padding:10px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;border-left:2px solid transparent;font-size:.78rem;color:var(--text2);}
+.phase-nav-item:hover{background:var(--blue-dim);color:var(--text);}
+.phase-nav-item.active{border-left-color:var(--blue);background:var(--blue-dim);color:var(--blue-bright);}
+.pni-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;}
+.phase-nav-item.active .pni-dot{background:var(--blue-bright);}
+.phase-nav-item.done .pni-dot{background:var(--green);}
+.roadmap-main{padding:32px 40px 60px;overflow-y:auto;}
+.rm-hero{background:var(--card);border:1px solid var(--border);padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;}
+.rm-hero::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--blue);}
+.rm-hero-tag{font-family:var(--mono);font-size:.6rem;color:var(--blue-bright);letter-spacing:.12em;margin-bottom:10px;}
+.rm-hero-title{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.rm-hero-sub{font-size:.9rem;color:var(--text2);line-height:1.7;font-weight:300;max-width:600px;}
+.rm-meta-row{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;}
+.rm-meta-chip{font-family:var(--mono);font-size:.65rem;color:var(--text2);padding:4px 10px;border:1px solid var(--border);background:var(--blue-dim);}
+.phases-container{display:flex;flex-direction:column;gap:0;}
+.phase-block{background:var(--card);border:1px solid var(--border);margin-bottom:16px;overflow:hidden;position:relative;}
+.phase-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.phase-1::before{background:var(--blue);}
+.phase-2::before{background:var(--amber);}
+.phase-3::before{background:#a855f7;}
+.phase-4::before{background:var(--green);}
+.phase-header{padding:18px 24px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
+.phase-num{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;font-weight:600;border:1px solid;flex-shrink:0;}
+.phase-1 .phase-num{border-color:var(--blue);color:var(--blue-bright);background:var(--blue-dim);}
+.phase-2 .phase-num{border-color:var(--amber);color:var(--amber);background:var(--amber-dim);}
+.phase-3 .phase-num{border-color:#a855f7;color:#c084fc;background:rgba(168,85,247,.1);}
+.phase-4 .phase-num{border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.phase-meta{flex:1;}
+.phase-title-text{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text);}
+.phase-subtitle{font-size:.72rem;color:var(--text2);margin-top:2px;}
+.phase-duration{font-family:var(--mono);font-size:.65rem;color:var(--text3);padding:3px 10px;border:1px solid var(--border);background:rgba(0,0,0,.2);}
+.phase-toggle{font-family:var(--mono);font-size:.8rem;color:var(--text3);transition:transform .3s;}
+.phase-body{padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.pb-section{background:var(--surface);border:1px solid var(--border);padding:16px;}
+.pbs-title{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.phase-1 .pbs-title{color:var(--blue);}
+.phase-2 .pbs-title{color:var(--amber);}
+.phase-3 .pbs-title{color:#a855f7;}
+.phase-4 .pbs-title{color:var(--green);}
+.skill-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border:1px solid var(--border);font-size:.72rem;color:var(--text2);margin:3px 2px;background:var(--card);transition:all .2s;}
+.skill-chip.gap{border-color:rgba(248,81,73,.4);color:var(--red);background:var(--red-dim);}
+.skill-chip.gap::before{content:'⚠';font-size:.65rem;}
+.skill-chip.strong{border-color:rgba(63,185,80,.3);color:var(--green);background:var(--green-dim);}
+.skill-chip.strong::before{content:'✓ ';}
+.resource-item{padding:8px 0;border-bottom:1px solid rgba(56,139,253,.06);display:flex;gap:10px;align-items:flex-start;}
+.resource-item:last-child{border-bottom:none;}
+.res-icon{font-size:.9rem;flex-shrink:0;margin-top:1px;}
+.res-text{font-size:.75rem;color:var(--text2);line-height:1.5;}
+.res-text strong{color:var(--text);}
+.res-type{font-family:var(--mono);font-size:.55rem;color:var(--text3);letter-spacing:.08em;display:block;margin-top:2px;}
+.milestone-list{list-style:none;}
+.milestone-list li{padding:7px 0;border-bottom:1px solid rgba(56,139,253,.06);font-size:.78rem;color:var(--text2);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.milestone-list li:last-child{border-bottom:none;}
+.milestone-list li::before{content:'→';font-family:var(--mono);font-size:.7rem;color:var(--text3);flex-shrink:0;margin-top:2px;}
+.gap-alert{background:var(--red-dim);border:1px solid rgba(248,81,73,.3);border-left:3px solid var(--red);padding:10px 14px;margin-bottom:16px;font-size:.78rem;color:#f87171;line-height:1.6;}
+.gap-alert strong{color:var(--red);}
+.full-width{grid-column:1/-1;}
+.rm-action-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
 #landing{padding:80px 0 60px;}
 
 @media(max-width:900px){
@@ -311,6 +390,7 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
     <div class="tb-tab active" onclick="showPage('landing')">Dashboard</div>
     <div class="tb-tab" onclick="startAssessment()">Assessment</div>
     <div class="tb-tab" id="tab-result" style="display:none" onclick="showPage('result-page')">My Report</div>
+    <div class="tb-tab" id="tab-roadmap" style="display:none" onclick="showRoadmapPage()">🗺 Roadmap</div>
   </div>
   <div class="tb-right">
     <div class="tb-stat">Placements Today <span class="val" id="tb-count">142</span></div>
@@ -411,6 +491,7 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
       <div class="fs-step" id="fss3"><div class="fs-num">03</div><div class="fs-info"><div class="fs-title">Skills</div><div class="fs-sub">Technical & soft</div></div></div>
       <div class="fs-step" id="fss4"><div class="fs-num">04</div><div class="fs-info"><div class="fs-title">Experience</div><div class="fs-sub">Projects & internships</div></div></div>
       <div class="fs-step" id="fss5"><div class="fs-num">05</div><div class="fs-info"><div class="fs-title">Backlogs</div><div class="fs-sub">Academic record</div></div></div>
+      <div class="fs-step" id="fss6"><div class="fs-num">06</div><div class="fs-info"><div class="fs-title">Career Goal</div><div class="fs-sub">Target field</div></div></div>
       <div class="form-sidebar-news">
         <div class="fsn-head">While You Fill...</div>
         <div class="fsn-item"><strong>Priya Sharma</strong> placed at Microsoft — ₹42 LPA → CGPA 9.1</div>
@@ -421,7 +502,7 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
     </div>
     <div class="form-main">
       <div class="prog-wrap">
-        <div class="prog-meta"><span class="prog-lbl">ASSESSMENT PROGRESS</span><span class="prog-lbl" id="prog-txt">Step 1 of 5</span></div>
+        <div class="prog-meta"><span class="prog-lbl">ASSESSMENT PROGRESS</span><span class="prog-lbl" id="prog-txt">Step 1 of 6</span></div>
         <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
       </div>
       <div class="step active" id="s1">
@@ -481,14 +562,64 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
             </div>
             <div style="margin-top:16px;padding:12px 14px;border-left:2px solid var(--red);background:var(--red-dim)"><p class="field-hint" style="color:rgba(248,81,73,.8)">// WARNING: Active backlogs trigger auto-rejection at 80%+ of Fortune 500 campus drives before any human review.</p></div>
           </div>
-          <div class="qp-footer"><button class="btn-back-nav" onclick="prev(5)">← BACK</button><button class="btn-fwd-nav" onclick="calculate()">RUN ANALYSIS ▶</button></div>
+          <div class="qp-footer"><button class="btn-back-nav" onclick="prev(5)">← BACK</button><button class="btn-fwd-nav" onclick="next(5)">CONTINUE →</button></div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="step" id="s6">
+        <div class="qpanel">
+          <div class="qp-header"><span class="qp-step-tag">MODULE 06</span><div><div class="qp-category">Career Targeting</div><div class="qp-question">What field do you want to enter?</div></div></div>
+          <div class="qp-body">
+            <p style="font-size:.8rem;color:var(--text2);margin-bottom:18px;line-height:1.6;">Select your target career field. We'll generate a personalized roadmap with phase-by-phase guidance based on your current skill gaps.</p>
+            <div class="field-grid" id="field-grid">
+              <div class="field-opt" data-field="sde" onclick="selField(this)">
+                <div class="fo-icon">💻</div>
+                <div class="fo-title">Software Engineer</div>
+                <div class="fo-sub">DSA · System Design · Backend</div>
+              </div>
+              <div class="field-opt" data-field="fullstack" onclick="selField(this)">
+                <div class="fo-icon">🌐</div>
+                <div class="fo-title">Full Stack Developer</div>
+                <div class="fo-sub">React · Node · Databases</div>
+              </div>
+              <div class="field-opt" data-field="ml" onclick="selField(this)">
+                <div class="fo-icon">🤖</div>
+                <div class="fo-title">ML / Data Science</div>
+                <div class="fo-sub">Python · ML · Analytics</div>
+              </div>
+              <div class="field-opt" data-field="devops" onclick="selField(this)">
+                <div class="fo-icon">☁️</div>
+                <div class="fo-title">DevOps / Cloud</div>
+                <div class="fo-sub">AWS · Docker · CI/CD</div>
+              </div>
+              <div class="field-opt" data-field="security" onclick="selField(this)">
+                <div class="fo-icon">🔒</div>
+                <div class="fo-title">Cybersecurity</div>
+                <div class="fo-sub">Networking · Pen Testing</div>
+              </div>
+              <div class="field-opt" data-field="mobile" onclick="selField(this)">
+                <div class="fo-icon">📱</div>
+                <div class="fo-title">Mobile Developer</div>
+                <div class="fo-sub">Android / iOS · Flutter</div>
+              </div>
+              <div class="field-opt" data-field="uiux" onclick="selField(this)">
+                <div class="fo-icon">🎨</div>
+                <div class="fo-title">UI/UX Designer</div>
+                <div class="fo-sub">Figma · Research · Prototyping</div>
+              </div>
+              <div class="field-opt" data-field="pm" onclick="selField(this)">
+                <div class="fo-icon">📊</div>
+                <div class="fo-title">Product / Business</div>
+                <div class="fo-sub">Strategy · Analytics · Management</div>
+              </div>
+            </div>
+          </div>
+          <div class="qp-footer"><button class="btn-back-nav" onclick="prev(6)">← BACK</button><button class="btn-fwd-nav" onclick="calculate()">RUN ANALYSIS ▶</button></div>
+        </div>
+      </div>
+    </div><!-- end form-main -->
+  </div><!-- end form-layout -->
+</div><!-- end page#form-page -->
 
-<!-- RESULT PAGE -->
 <div class="page" id="result-page">
   <div class="result-layout">
     <div class="result-main">
@@ -514,6 +645,7 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
       <div class="action-row">
         <button class="act-btn act-primary" onclick="restart()">Retake Assessment</button>
         <button class="act-btn act-secondary" onclick="copyResult()">Copy Result</button>
+        <button class="act-btn" style="background:rgba(168,85,247,.15);color:#c084fc;border:1px solid rgba(168,85,247,.3);flex:1.5;" onclick="showRoadmapPage()">🗺 View Career Roadmap</button>
         <button class="act-btn act-pdf" onclick="downloadPDF()" id="pdf-btn">⬇ Download PDF Report</button>
       </div>
     </div>
@@ -532,7 +664,40 @@ input[type=range]::-webkit-slider-thumb:active{cursor:grabbing;}
   </div>
 </div>
 
+<!-- ROADMAP PAGE -->
+<div class="page" id="roadmap-page">
+  <div class="roadmap-layout">
+    <div class="roadmap-sidebar">
+      <div class="rms-section">
+        <div class="rms-head">Your Target Field</div>
+        <div class="field-badge" id="rm-field-badge">
+          <span class="field-icon" id="rm-field-icon">💻</span>
+          <div><div class="field-title" id="rm-field-title">Software Engineer</div><div class="field-sub" id="rm-field-sub">Backend · DSA · System Design</div></div>
+        </div>
+      </div>
+      <div class="rms-section">
+        <div class="rms-head">Your Skill Gaps</div>
+        <div id="rm-gaps"></div>
+      </div>
+      <div class="rms-section">
+        <div class="rms-head">Phase Navigation</div>
+        <div id="rm-phase-nav"></div>
+      </div>
+    </div>
+    <div class="roadmap-main" id="roadmap-main">
+      <div class="rm-hero" id="rm-hero"></div>
+      <div class="phases-container" id="phases-container"></div>
+      <div class="rm-action-row">
+        <button class="act-btn act-primary" onclick="showPage('result-page');document.querySelectorAll('.tb-tab')[2].classList.add('active');">← Back to Report</button>
+        <button class="act-btn act-secondary" onclick="restart()">New Assessment</button>
+        <button class="act-btn act-pdf" id="rm-pdf-btn" onclick="downloadRoadmapPDF()" style="flex:1.5;">⬇ Download Roadmap PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+// ── ALL EXISTING JS ──────────────────────────────────────────────
 const PLACEMENTS=[
   {name:'Arjun Mehta',co:'Google',pkg:'₹45 LPA',time:'2m ago'},
   {name:'Priya Sharma',co:'Microsoft',pkg:'₹38 LPA',time:'5m ago'},
@@ -620,8 +785,9 @@ function buildGradeBar(v){
 }
 buildGradeBar(7.5);
 
-const S={name:'',cgpa:7.5,code:5,comm:5,apt:5,dsa:5,proj:0,intern:0,backlogs:0};
+const S={name:'',cgpa:7.5,code:5,comm:5,apt:5,dsa:5,proj:0,intern:0,backlogs:0,field:'sde'};
 const counts={proj:0,intern:0};let blVal=0;
+let selectedField='sde';
 
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -630,15 +796,16 @@ function showPage(id){
   if(id==='landing')document.querySelector('.tb-tab').classList.add('active');
   else if(id==='form-page')document.querySelectorAll('.tb-tab')[1].classList.add('active');
   else if(id==='result-page')document.querySelectorAll('.tb-tab')[2].classList.add('active');
+  else if(id==='roadmap-page')document.querySelectorAll('.tb-tab')[3].classList.add('active');
 }
 function startAssessment(){showPage('form-page');showStep(1);}
 
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById('s'+n).classList.add('active');
-  document.getElementById('prog-fill').style.width=((n-1)/5*100)+'%';
-  document.getElementById('prog-txt').textContent=`Step ${n} of 5`;
-  for(let i=1;i<=5;i++){
+  document.getElementById('prog-fill').style.width=((n-1)/6*100)+'%';
+  document.getElementById('prog-txt').textContent=`Step ${n} of 6`;
+  for(let i=1;i<=6;i++){
     const el=document.getElementById('fss'+i);
     el.classList.remove('active','done');
     if(i<n)el.classList.add('done');else if(i===n)el.classList.add('active');
@@ -650,6 +817,7 @@ function next(from){
   if(from===2)S.cgpa=parseFloat(document.getElementById('inp-cgpa').value);
   if(from===3){S.code=+document.getElementById('inp-code').value;S.comm=+document.getElementById('inp-comm').value;S.apt=+document.getElementById('inp-apt').value;S.dsa=+document.getElementById('inp-dsa').value;}
   if(from===4){S.proj=counts.proj;S.intern=counts.intern;}
+  if(from===5){S.backlogs=blVal;}
   showStep(from+1);
 }
 function prev(from){showStep(from-1);}
@@ -658,12 +826,13 @@ function onCgpa(v){v=parseFloat(v);document.getElementById('cgpa-val').textConte
 function skillUp(k,v){document.getElementById('sv-'+k).textContent=v;document.getElementById('sf-'+k).style.width=(v*10)+'%';document.getElementById('inp-'+k).style.setProperty('--pct',(v*10)+'%');}
 function cnt(k,d){counts[k]=Math.max(0,Math.min(k==='proj'?20:5,counts[k]+d));document.getElementById('cv-'+k).textContent=counts[k];}
 function blSel(el,val){document.querySelectorAll('.bl-opt').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');blVal=val;}
+function selField(el){document.querySelectorAll('.field-opt').forEach(f=>f.classList.remove('sel'));el.classList.add('sel');selectedField=el.dataset.field;}
 
 function calculate(){
-  S.backlogs=blVal;S.proj=counts.proj;S.intern=counts.intern;
+  S.backlogs=blVal;S.proj=counts.proj;S.intern=counts.intern;S.field=selectedField||'sde';
   const ld=document.getElementById('loader');ld.classList.add('show');
   const lf=document.getElementById('ld-fill');lf.style.animation='none';void lf.offsetWidth;lf.style.animation='ldFill 1.8s ease forwards';
-  const msgs=['Scanning academic record...','Calibrating skill vectors...','Comparing against 2025 placement data...','Computing probability score...','Generating your report...'];
+  const msgs=['Scanning academic record...','Calibrating skill vectors...','Comparing against 2025 placement data...','Computing probability score...','Building your career roadmap...'];
   let i=0;const iv=setInterval(()=>{const el=document.getElementById('ld-sub');if(el&&i<msgs.length)el.textContent=msgs[i++];else clearInterval(iv);},350);
   setTimeout(()=>{ld.classList.remove('show');showResult(computeScore());},1900);
 }
@@ -676,10 +845,11 @@ function computeScore(){
 
 function showResult(score){
   document.getElementById('tab-result').style.display='flex';
+  document.getElementById('tab-roadmap').style.display='flex';
   showPage('result-page');
   document.getElementById('res-name').textContent=S.name.toUpperCase();
   const rsIn=document.getElementById('rs-inputs');
-  if(rsIn)rsIn.innerHTML=[['CGPA',S.cgpa.toFixed(1)],['Coding',`${S.code}/10`],['Communication',`${S.comm}/10`],['Aptitude',`${S.apt}/10`],['DSA',`${S.dsa}/10`],['Projects',S.proj],['Internships',S.intern],['Backlogs',S.backlogs===0?'None':S.backlogs]].map(([k,v])=>`<div class="rs-item"><span class="rs-key">${k}</span><span class="rs-val">${v}</span></div>`).join('');
+  if(rsIn)rsIn.innerHTML=[['CGPA',S.cgpa.toFixed(1)],['Coding',`${S.code}/10`],['Communication',`${S.comm}/10`],['Aptitude',`${S.apt}/10`],['DSA',`${S.dsa}/10`],['Projects',S.proj],['Internships',S.intern],['Backlogs',S.backlogs===0?'None':S.backlogs],['Target Field',FIELD_DATA[S.field]?.title||'—']].map(([k,v])=>`<div class="rs-item"><span class="rs-key">${k}</span><span class="rs-val">${v}</span></div>`).join('');
   const rsNews=document.getElementById('rs-news');
   if(rsNews)rsNews.innerHTML=PLACEMENTS.slice(0,5).map(p=>`<div class="rs-item"><span class="rs-key">${p.name}</span><span class="rs-val" style="color:var(--green)">${p.pkg}</span></div>`).join('');
   let color,verdict,desc;
@@ -717,7 +887,7 @@ function showResult(score){
   const tips=[];
   if(S.cgpa<7)tips.push({pri:'HIGH',cls:'tp-high',text:'<strong>Improve CGPA above 7.5.</strong> Many top companies have strict 7+ cutoffs. Attend extra sessions, clear doubts early, prioritise scoring subjects.'});
   if(S.code<6)tips.push({pri:'HIGH',cls:'tp-high',text:'<strong>Daily coding practice is non-negotiable.</strong> Solve 2–3 LeetCode problems every day. Start Easy → Medium over 8 weeks. Track 100+ solved.'});
-  if(S.dsa<6)tips.push({pri:'HIGH',cls:'tp-high',text:'<strong>Master DSA fundamentals.</strong> Arrays, Trees, Graphs, Dynamic Programming appear in every product company interview. Use Striver\'s SDE Sheet.'});
+  if(S.dsa<6)tips.push({pri:'HIGH',cls:'tp-high',text:"<strong>Master DSA fundamentals.</strong> Arrays, Trees, Graphs, Dynamic Programming appear in every product company interview. Use Striver's SDE Sheet."});
   if(S.comm<6)tips.push({pri:'MEDIUM',cls:'tp-med',text:'<strong>Build communication confidence.</strong> Practice mock GDs, record HR answers, review them. Join a public speaking club or debate society.'});
   if(S.apt<5)tips.push({pri:'MEDIUM',cls:'tp-med',text:'<strong>Strengthen aptitude daily.</strong> 30 min on IndiaBix or PrepInsta — rotate between Quantitative, Logical Reasoning, and Verbal sections.'});
   if(S.proj<2)tips.push({pri:'MEDIUM',cls:'tp-med',text:'<strong>Build 2–3 showcase projects.</strong> A deployed full-stack app, ML model, or mobile app with a clear GitHub README will stand out to recruiters.'});
@@ -737,10 +907,942 @@ function fireConfetti(){
 
 function copyResult(){const score=document.getElementById('res-num').textContent;const verdict=document.getElementById('res-verdict').textContent;navigator.clipboard.writeText(`PlaceIQ Report\nCandidate: ${S.name}\nScore: ${score}/100\nVerdict: ${verdict}`).then(()=>{const b=document.querySelector('.act-secondary');b.textContent='✓ Copied!';setTimeout(()=>b.textContent='Copy Result',2000);});}
 
-function restart(){Object.assign(counts,{proj:0,intern:0});blVal=0;document.getElementById('inp-name').value='';document.getElementById('inp-cgpa').value=7.5;onCgpa(7.5);['code','comm','apt','dsa'].forEach(k=>{document.getElementById('inp-'+k).value=5;skillUp(k,5);});document.getElementById('cv-proj').textContent='0';document.getElementById('cv-intern').textContent='0';document.querySelectorAll('.bl-opt').forEach(b=>b.classList.remove('sel'));document.querySelector('.bl-opt').classList.add('sel');document.getElementById('sr-fill').style.strokeDashoffset=2*Math.PI*55;document.getElementById('tab-result').style.display='none';showPage('form-page');showStep(1);}
+function restart(){Object.assign(counts,{proj:0,intern:0});blVal=0;selectedField='sde';document.getElementById('inp-name').value='';document.getElementById('inp-cgpa').value=7.5;onCgpa(7.5);['code','comm','apt','dsa'].forEach(k=>{document.getElementById('inp-'+k).value=5;skillUp(k,5);});document.getElementById('cv-proj').textContent='0';document.getElementById('cv-intern').textContent='0';document.querySelectorAll('.bl-opt').forEach(b=>b.classList.remove('sel'));document.querySelector('.bl-opt').classList.add('sel');document.querySelectorAll('.field-opt').forEach(f=>f.classList.remove('sel'));document.getElementById('sr-fill').style.strokeDashoffset=2*Math.PI*55;document.getElementById('tab-result').style.display='none';document.getElementById('tab-roadmap').style.display='none';showPage('form-page');showStep(1);}
 
 document.addEventListener('keydown',e=>{if(e.key==='Enter'){const btn=document.querySelector('.step.active .btn-fwd-nav');if(btn)btn.click();}});
 
+// ── CAREER ROADMAP DATA ──────────────────────────────────────────
+const FIELD_DATA = {
+  sde: {
+    title: 'Software Engineer',
+    icon: '💻',
+    sub: 'Backend · DSA · System Design',
+    desc: 'Software Engineers at product companies build scalable systems, solve complex algorithmic problems, and design architecture for millions of users. This path demands deep DSA skills and systems thinking.',
+    timeline: '4–6 months',
+    avgPkg: '₹12–45 LPA',
+    topCompanies: 'Google, Amazon, Microsoft, Flipkart',
+    phases: [
+      {
+        title: 'Foundation',
+        subtitle: 'Core programming & problem solving basics',
+        duration: '4–6 weeks',
+        skills: ['C++ / Java / Python basics','OOP Concepts','Time & Space Complexity','Basic Data Structures','Git & GitHub'],
+        gapSkills: {code: 'Coding', dsa: 'DSA'},
+        tools: ['VS Code', 'GitHub', 'LeetCode', 'GeeksForGeeks'],
+        resources: [
+          {icon:'📺', title:'CS50 by Harvard', sub:'Free · OpenCourseWare', type:'Course'},
+          {icon:'📗', title:'Introduction to Algorithms (CLRS)', sub:'Book', type:'Book'},
+          {icon:'💻', title:'LeetCode Easy Problems (50+)', sub:'Platform', type:'Practice'},
+          {icon:'🎥', title:'Love Babbar C++ / Java playlist', sub:'YouTube · Free', type:'Video'},
+        ],
+        milestones: ['Write programs in your primary language fluently','Understand Big-O notation for all code you write','Solve 50+ LeetCode Easy problems','Build a simple CLI project and push to GitHub'],
+      },
+      {
+        title: 'Core DSA',
+        subtitle: 'Master the interview staples',
+        duration: '6–8 weeks',
+        skills: ['Arrays & Strings','Linked Lists','Stacks & Queues','Trees & BST','Graphs (BFS/DFS)','Dynamic Programming','Recursion & Backtracking'],
+        gapSkills: {dsa: 'DSA', code: 'Coding'},
+        tools: ['LeetCode', 'HackerRank', 'Codeforces', 'Striver SDE Sheet'],
+        resources: [
+          {icon:'📋', title:"Striver's SDE Sheet (180 problems)", sub:'Free · takeUforward.org', type:'Problem Set'},
+          {icon:'📺', title:'Abdul Bari Algorithms — YouTube', sub:'Free · Complete course', type:'Video'},
+          {icon:'💻', title:'LeetCode Medium Daily (1–2/day)', sub:'Platform', type:'Practice'},
+          {icon:'📗', title:'Cracking the Coding Interview', sub:'Book · G. L. McDowell', type:'Book'},
+        ],
+        milestones: ['Complete Striver SDE Sheet Phase 1','Solve 150+ problems (Easy+Medium mix)','Understand all graph traversal patterns','Implement DP solutions for classic problems'],
+      },
+      {
+        title: 'Advanced & System Design',
+        subtitle: 'Think at scale like a senior engineer',
+        duration: '6–8 weeks',
+        skills: ['System Design basics','Databases & SQL','REST APIs','Operating Systems','Computer Networks','Concurrency & Threading','Microservices'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['Postman', 'MySQL / PostgreSQL', 'Docker (basics)', 'AWS S3 (basics)'],
+        resources: [
+          {icon:'📗', title:'Designing Data-Intensive Applications', sub:'Book · Martin Kleppmann', type:'Book'},
+          {icon:'🌐', title:'System Design Primer — GitHub', sub:'Free · donnemartin/system-design-primer', type:'Guide'},
+          {icon:'📺', title:'Gaurav Sen System Design — YouTube', sub:'Free', type:'Video'},
+          {icon:'💻', title:'Build a full CRUD REST API project', sub:'Personal project', type:'Project'},
+        ],
+        milestones: ['Design a URL shortener, chat app, or ride-sharing system','Build and deploy a REST API to the cloud','Complete 200+ LeetCode (including 20+ Hard)','Write a blog post explaining a system you designed'],
+      },
+      {
+        title: 'Interview Ready',
+        subtitle: 'Mock interviews, polish & apply',
+        duration: '3–4 weeks',
+        skills: ['Mock Technical Interviews','Behavioral / HR prep','Resume building','Competitive Programming','LinkedIn optimization','Negotiation basics'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['Pramp', 'Interviewing.io', 'LinkedIn', 'Glassdoor'],
+        resources: [
+          {icon:'🎯', title:'Pramp — Free mock interviews', sub:'Free · peer-to-peer', type:'Platform'},
+          {icon:'📝', title:'Resume Worded — ATS checker', sub:'Free tier available', type:'Tool'},
+          {icon:'📺', title:'TechLead & Clement Mihailescu on YouTube', sub:'Interview tips', type:'Video'},
+          {icon:'💡', title:'Blind & TeamBlind — real interview experiences', sub:'Community', type:'Community'},
+        ],
+        milestones: ['Complete 10+ mock interviews on Pramp','Finalize a 1-page ATS-optimized resume','Apply to 20+ companies systematically','Prepare STAR stories for behavioral rounds'],
+      },
+    ],
+  },
+  fullstack: {
+    title: 'Full Stack Developer',
+    icon: '🌐',
+    sub: 'React · Node.js · Databases',
+    desc: 'Full Stack Developers build end-to-end web applications — from beautiful frontends to powerful backends and databases. This is one of the most in-demand roles in startups and product companies.',
+    timeline: '4–5 months',
+    avgPkg: '₹8–25 LPA',
+    topCompanies: 'Razorpay, Zomato, Swiggy, PhonePe, startups',
+    phases: [
+      {
+        title: 'Frontend Fundamentals',
+        subtitle: 'HTML, CSS, JavaScript — the holy trinity',
+        duration: '3–4 weeks',
+        skills: ['HTML5 & Semantic markup','CSS3 & Flexbox / Grid','JavaScript ES6+','DOM manipulation','Browser DevTools','Responsive Design','Git & GitHub'],
+        gapSkills: {code: 'Coding'},
+        tools: ['VS Code', 'Chrome DevTools', 'GitHub', 'Figma (basics)'],
+        resources: [
+          {icon:'🌐', title:'The Odin Project — Full Stack curriculum', sub:'Free · theodinproject.com', type:'Course'},
+          {icon:'📺', title:'Traversy Media JavaScript Crash Course', sub:'YouTube · Free', type:'Video'},
+          {icon:'💻', title:'Frontend Mentor challenges', sub:'Free · frontendmentor.io', type:'Practice'},
+          {icon:'📗', title:'Eloquent JavaScript — Marijn Haverbeke', sub:'Free online', type:'Book'},
+        ],
+        milestones: ['Build 3 static HTML/CSS pages (portfolio, blog, landing page)','Complete 10 JavaScript challenges','Deploy a site using GitHub Pages','Make a fully responsive design'],
+      },
+      {
+        title: 'React & Backend Basics',
+        subtitle: 'Build dynamic apps front-to-back',
+        duration: '5–6 weeks',
+        skills: ['React (components, hooks, state)','Node.js & Express','REST API design','MongoDB / PostgreSQL','Authentication (JWT)','npm & package management'],
+        gapSkills: {code: 'Coding', proj: 'Projects'},
+        tools: ['React DevTools', 'Postman', 'MongoDB Atlas', 'Heroku / Railway'],
+        resources: [
+          {icon:'📺', title:'Scrimba React Course', sub:'Free + paid · scrimba.com', type:'Course'},
+          {icon:'📺', title:'Net Ninja Node.js & Express Series', sub:'YouTube · Free', type:'Video'},
+          {icon:'💻', title:'Build a Todo App + Blog API', sub:'Personal project', type:'Project'},
+          {icon:'📗', title:'Node.js Design Patterns — Mario Casciaro', sub:'Book', type:'Book'},
+        ],
+        milestones: ['Build and deploy a React SPA (single page app)','Create a REST API with full CRUD operations','Connect frontend to backend with authentication','Push full project to GitHub with clear README'],
+      },
+      {
+        title: 'Full Stack Projects',
+        subtitle: 'Build real, deployable applications',
+        duration: '6–8 weeks',
+        skills: ['Next.js / full-stack frameworks','State management (Redux/Zustand)','Database optimization','File uploads & cloud storage','WebSockets (real-time)','Testing basics (Jest)','CI/CD pipeline basics'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['Next.js', 'AWS S3', 'Vercel / Netlify', 'GitHub Actions'],
+        resources: [
+          {icon:'🌐', title:'Next.js official docs tutorial', sub:'Free · nextjs.org', type:'Docs'},
+          {icon:'📺', title:'Fireship.io — modern web dev', sub:'YouTube + courses', type:'Video'},
+          {icon:'💻', title:'Build: E-commerce app or Chat app', sub:'Capstone project', type:'Project'},
+          {icon:'🎯', title:'Contribute to open source on GitHub', sub:'Community', type:'Practice'},
+        ],
+        milestones: ['Deploy 2 full-stack apps with live URLs','Implement real-time feature using WebSockets','Add CI/CD so every push auto-deploys','Get one app to 100+ GitHub stars or real users'],
+      },
+      {
+        title: 'Job Ready',
+        subtitle: 'Portfolio, interviews, offers',
+        duration: '3–4 weeks',
+        skills: ['System design for web apps','Resume & LinkedIn polish','Technical interviews','Portfolio site','Freelance or contract work','Salary negotiation'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['LinkedIn', 'AngelList', 'Wellfound', 'Portfolio hosting'],
+        resources: [
+          {icon:'🌐', title:'Josh W Comeau — CSS & React blog', sub:'Free · joshwcomeau.com', type:'Blog'},
+          {icon:'📝', title:'Flowcv.io — developer resume builder', sub:'Free', type:'Tool'},
+          {icon:'💼', title:'Internshala + LinkedIn for applications', sub:'Job boards', type:'Platform'},
+          {icon:'🎯', title:'LeetCode top 75 (Blind 75) for interviews', sub:'Problem set', type:'Practice'},
+        ],
+        milestones: ['Build personal portfolio site with 3 featured projects','Apply to 30+ companies / internships','Complete 5 technical mock interviews','Get at least one job offer or internship'],
+      },
+    ],
+  },
+  ml: {
+    title: 'ML / Data Science',
+    icon: '🤖',
+    sub: 'Python · Machine Learning · Analytics',
+    desc: 'Data Scientists and ML Engineers extract insights from data and build intelligent systems. This field combines statistics, programming, and domain knowledge — and is one of the fastest growing in tech.',
+    timeline: '5–7 months',
+    avgPkg: '₹10–35 LPA',
+    topCompanies: 'Flipkart, Amazon, Google, CRED, Meesho',
+    phases: [
+      {
+        title: 'Python & Math Foundation',
+        subtitle: 'The language of data and the math behind it',
+        duration: '4–5 weeks',
+        skills: ['Python (NumPy, Pandas, Matplotlib)','Statistics & Probability','Linear Algebra basics','Calculus (derivatives, gradients)','SQL fundamentals','Jupyter Notebooks'],
+        gapSkills: {code: 'Coding', apt: 'Aptitude'},
+        tools: ['Jupyter', 'Google Colab', 'VS Code', 'MySQL'],
+        resources: [
+          {icon:'📺', title:"Krish Naik's Python for ML — YouTube", sub:'Free · complete playlist', type:'Video'},
+          {icon:'📗', title:'Think Stats — Allen B. Downey', sub:'Free online', type:'Book'},
+          {icon:'💻', title:'Kaggle — Python & Pandas courses', sub:'Free · kaggle.com', type:'Course'},
+          {icon:'🌐', title:'3Blue1Brown — Essence of Linear Algebra', sub:'YouTube · Free', type:'Video'},
+        ],
+        milestones: ['Manipulate a real dataset with Pandas','Run SQL queries on a 100k+ row database','Visualize insights using Matplotlib/Seaborn','Complete Kaggle\'s Pandas micro-course'],
+      },
+      {
+        title: 'Core Machine Learning',
+        subtitle: 'Algorithms, models, and the ML pipeline',
+        duration: '6–8 weeks',
+        skills: ['Supervised Learning (regression, classification)','Unsupervised Learning (clustering, PCA)','Feature Engineering','Model Evaluation & Validation','Scikit-Learn','Gradient Descent & optimization'],
+        gapSkills: {code: 'Coding', dsa: 'Problem Solving'},
+        tools: ['Scikit-learn', 'Pandas', 'Matplotlib', 'Seaborn', 'Google Colab'],
+        resources: [
+          {icon:'🎓', title:"Andrew Ng's Machine Learning — Coursera", sub:'Paid (audit free) · coursera.org', type:'Course'},
+          {icon:'📗', title:"Hands-On ML with Scikit-Learn — Aurélien Géron", sub:'Book', type:'Book'},
+          {icon:'💻', title:'Kaggle — ML competitions (beginner tier)', sub:'Free', type:'Practice'},
+          {icon:'📺', title:'StatQuest with Josh Starmer — YouTube', sub:'Free · intuitive explanations', type:'Video'},
+        ],
+        milestones: ['Build end-to-end ML pipeline from CSV to predictions','Achieve top 25% on a Kaggle beginner competition','Implement 5 algorithms from scratch (without libraries)','Write a report comparing model performance metrics'],
+      },
+      {
+        title: 'Deep Learning & Specialization',
+        subtitle: 'Neural networks and your focus area',
+        duration: '6–8 weeks',
+        skills: ['Neural Networks & backpropagation','TensorFlow / PyTorch','Computer Vision OR NLP OR Tabular ML','Transfer Learning','Model deployment (Flask / FastAPI)','MLflow basics'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['PyTorch', 'TensorFlow', 'Hugging Face', 'FastAPI', 'MLflow'],
+        resources: [
+          {icon:'🎓', title:"Andrew Ng's Deep Learning Specialization", sub:'Coursera · audit free', type:'Course'},
+          {icon:'📗', title:'Deep Learning — Goodfellow, Bengio, Courville', sub:'Free online · deeplearningbook.org', type:'Book'},
+          {icon:'💻', title:'Fast.ai — Practical Deep Learning for coders', sub:'Free · fast.ai', type:'Course'},
+          {icon:'🌐', title:'Papers With Code — SOTA models', sub:'Free · paperswithcode.com', type:'Research'},
+        ],
+        milestones: ['Train a CNN on image classification task (>85% accuracy)','Build a text classifier or recommender system','Deploy an ML model as a web API','Start a Kaggle notebook with detailed EDA & modeling'],
+      },
+      {
+        title: 'Interview & Portfolio',
+        subtitle: 'Showcase your work and land the role',
+        duration: '3–4 weeks',
+        skills: ['ML interview prep (statistics, probability)','Case study frameworks','A/B testing concepts','Data storytelling','SQL for analytics','Communication of results'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['Tableau / Power BI', 'Notion (portfolio)', 'LinkedIn', 'GitHub'],
+        resources: [
+          {icon:'📗', title:'Data Science Interview Prep — Ace the Data Science Interview', sub:'Book', type:'Book'},
+          {icon:'💻', title:'StrataScratch — SQL & ML interview questions', sub:'Free tier · stratascratch.com', type:'Practice'},
+          {icon:'🌐', title:'Towards Data Science on Medium', sub:'Community blog', type:'Blog'},
+          {icon:'🎯', title:'Portfolio: 3 projects with GitHub + write-ups', sub:'Personal', type:'Project'},
+        ],
+        milestones: ['Complete 3 end-to-end ML projects on GitHub','Write 2 blog posts explaining your ML work','Answer 50+ DS interview questions on StrataScratch','Apply to 20+ data roles with tailored resume'],
+      },
+    ],
+  },
+  devops: {
+    title: 'DevOps / Cloud Engineer',
+    icon: '☁️',
+    sub: 'AWS · Docker · CI/CD',
+    desc: 'DevOps engineers bridge development and operations — automating deployment pipelines, managing cloud infrastructure, and ensuring systems stay fast and reliable at scale.',
+    timeline: '4–6 months',
+    avgPkg: '₹10–30 LPA',
+    topCompanies: 'AWS, Infosys, TCS, Wipro, startups',
+    phases: [
+      {
+        title: 'Linux & Networking',
+        subtitle: 'The foundation every DevOps engineer needs',
+        duration: '3–4 weeks',
+        skills: ['Linux CLI & shell scripting','Bash scripting','Networking basics (TCP/IP, DNS, HTTP)','SSH & security basics','File system & permissions','Process management'],
+        gapSkills: {code: 'Coding', apt: 'Aptitude'},
+        tools: ['Ubuntu/Linux', 'Terminal', 'VS Code', 'Git'],
+        resources: [
+          {icon:'📺', title:'The Linux Command Line — William Shotts', sub:'Free online · linuxcommand.org', type:'Book'},
+          {icon:'🎓', title:'Linux Foundation free courses', sub:'Free · training.linuxfoundation.org', type:'Course'},
+          {icon:'💻', title:'OverTheWire: Bandit — Linux wargame', sub:'Free · overthewire.org', type:'Practice'},
+          {icon:'📺', title:'NetworkChuck — Linux & Networking', sub:'YouTube · Free', type:'Video'},
+        ],
+        milestones: ['Write 5 useful Bash automation scripts','Set up and configure a Linux server from scratch','Understand how HTTP requests travel end-to-end','SSH into a remote machine and manage processes'],
+      },
+      {
+        title: 'Docker & Containers',
+        subtitle: 'Package and ship applications reliably',
+        duration: '4–5 weeks',
+        skills: ['Docker basics & Dockerfile','Docker Compose','Kubernetes fundamentals','Container networking','Image optimization','Helm charts basics'],
+        gapSkills: {proj: 'Projects'},
+        tools: ['Docker Desktop', 'Docker Hub', 'Kubernetes (minikube)', 'Helm'],
+        resources: [
+          {icon:'📗', title:'Docker Deep Dive — Nigel Poulton', sub:'Book', type:'Book'},
+          {icon:'🎓', title:'KodeKloud — Docker & Kubernetes labs', sub:'Paid · hands-on labs', type:'Course'},
+          {icon:'📺', title:'TechWorld with Nana — Docker & K8s', sub:'YouTube · Free', type:'Video'},
+          {icon:'💻', title:'Dockerize a personal project end-to-end', sub:'Hands-on project', type:'Project'},
+        ],
+        milestones: ['Containerize a 3-tier web application','Set up Docker Compose with app + database','Deploy a basic Kubernetes cluster locally','Publish a Docker image to Docker Hub'],
+      },
+      {
+        title: 'Cloud & CI/CD',
+        subtitle: 'AWS + automated pipelines',
+        duration: '6–8 weeks',
+        skills: ['AWS (EC2, S3, RDS, Lambda, IAM)','Terraform / Infrastructure as Code','GitHub Actions / Jenkins CI/CD','Monitoring (CloudWatch, Grafana)','Ansible basics','Cost optimization'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['AWS Console', 'Terraform', 'GitHub Actions', 'Grafana', 'Ansible'],
+        resources: [
+          {icon:'🎓', title:'AWS Solutions Architect Associate — exam prep', sub:'A Cloud Guru / Udemy', type:'Course'},
+          {icon:'📗', title:'Terraform: Up & Running — Yevgeniy Brikman', sub:'Book', type:'Book'},
+          {icon:'💻', title:'Build a full CI/CD pipeline for a web app', sub:'Capstone project', type:'Project'},
+          {icon:'🌐', title:'roadmap.sh/devops — structured roadmap', sub:'Free guide', type:'Guide'},
+        ],
+        milestones: ['Deploy a containerized app to AWS ECS/EKS','Write Terraform to spin up infrastructure in one command','Create CI/CD pipeline: push code → auto deploy to AWS','Get AWS Cloud Practitioner certified'],
+      },
+      {
+        title: 'Interview & Certification',
+        subtitle: 'Credentials and job hunt strategy',
+        duration: '3–4 weeks',
+        skills: ['AWS Solutions Architect prep','System design for DevOps (HA, DR)','Incident management & SRE basics','Mock technical interviews','Resume for DevOps roles'],
+        gapSkills: {comm: 'Communication'},
+        tools: ['Whizlabs', 'TutorialsDojo', 'LinkedIn', 'GitHub portfolio'],
+        resources: [
+          {icon:'🎓', title:'AWS SAA-C03 practice exams — TutorialsDojo', sub:'Paid · tutorialsdojo.com', type:'Practice'},
+          {icon:'📗', title:'Site Reliability Engineering — Google SRE Book', sub:'Free online · sre.google', type:'Book'},
+          {icon:'💼', title:'DevOps jobs on LinkedIn & Naukri', sub:'Job boards', type:'Platform'},
+          {icon:'💻', title:'GitHub portfolio: 3 infrastructure projects', sub:'Personal', type:'Project'},
+        ],
+        milestones: ['Pass AWS Cloud Practitioner or SAA certification','Complete 3 documented infrastructure projects on GitHub','Apply to 25+ DevOps / Cloud roles','Do 5 mock system design interviews'],
+      },
+    ],
+  },
+  security: {
+    title: 'Cybersecurity Analyst',
+    icon: '🔒',
+    sub: 'Networking · Pen Testing · Security',
+    desc: 'Cybersecurity professionals protect systems, networks, and data from threats. This field demands curiosity, deep technical knowledge, and a hacker mindset — one of the fastest growing with massive talent shortage.',
+    timeline: '5–7 months',
+    avgPkg: '₹8–25 LPA',
+    topCompanies: 'TCS, Wipro, Deloitte, IBM, government',
+    phases: [
+      {
+        title: 'Networking & Linux',
+        subtitle: 'The bedrock of cybersecurity knowledge',
+        duration: '4–5 weeks',
+        skills: ['Networking (OSI model, TCP/IP, protocols)','Linux CLI & permissions','Firewalls & proxies','Wireshark & packet analysis','DNS, DHCP, HTTP/S','VPNs & encryption basics'],
+        gapSkills: {code: 'Coding', apt: 'Aptitude'},
+        tools: ['Kali Linux', 'Wireshark', 'Nmap', 'VirtualBox'],
+        resources: [
+          {icon:'📗', title:'CompTIA Network+ Study Guide', sub:'Book', type:'Book'},
+          {icon:'📺', title:'Professor Messer — Network+ free course', sub:'YouTube · Free', type:'Video'},
+          {icon:'💻', title:'TryHackMe — Pre-Security learning path', sub:'Free starter · tryhackme.com', type:'Platform'},
+          {icon:'📺', title:'NetworkChuck — networking fundamentals', sub:'YouTube · Free', type:'Video'},
+        ],
+        milestones: ['Capture and analyze HTTP traffic with Wireshark','Set up a home lab with VirtualBox + Kali Linux','Complete TryHackMe Pre-Security path (100%)','Understand how common attacks (MITM, DoS) work'],
+      },
+      {
+        title: 'Security Fundamentals',
+        subtitle: 'Core security concepts and tools',
+        duration: '5–6 weeks',
+        skills: ['Cryptography fundamentals','Web application security (OWASP Top 10)','Authentication & authorization','Vulnerability scanning','Log analysis & SIEM','Incident response basics'],
+        gapSkills: {apt: 'Aptitude', dsa: 'Problem Solving'},
+        tools: ['Burp Suite (Community)', 'Nessus / OpenVAS', 'Splunk (free)', 'Metasploit'],
+        resources: [
+          {icon:'📗', title:'The Web Application Hacker\'s Handbook', sub:'Book', type:'Book'},
+          {icon:'🎓', title:'Google Cybersecurity Certificate — Coursera', sub:'Paid (audit free)', type:'Course'},
+          {icon:'💻', title:'TryHackMe — SOC Level 1 path', sub:'Free/paid · tryhackme.com', type:'Platform'},
+          {icon:'🌐', title:'PortSwigger Web Security Academy', sub:'Free · portswigger.net', type:'Course'},
+        ],
+        milestones: ['Exploit OWASP Top 10 vulnerabilities in a lab environment','Complete TryHackMe SOC Level 1 (50%)','Write a vulnerability assessment report for a test system','Understand how SQL injection and XSS attacks work'],
+      },
+      {
+        title: 'Ethical Hacking & Pen Testing',
+        subtitle: 'Think like an attacker to defend better',
+        duration: '6–8 weeks',
+        skills: ['Reconnaissance & OSINT','Exploitation techniques (ethical)','Privilege escalation','Post-exploitation & persistence','Report writing','CTF (Capture The Flag) competitions'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['Metasploit', 'Burp Suite Pro', 'Hydra', 'John the Ripper', 'Maltego'],
+        resources: [
+          {icon:'💻', title:'HackTheBox — Practice machines', sub:'Free tier · hackthebox.com', type:'Platform'},
+          {icon:'🎓', title:'eJPT Certification — eLearnSecurity', sub:'Paid · entry-level cert', type:'Certification'},
+          {icon:'📗', title:'Hacking: The Art of Exploitation — Jon Erickson', sub:'Book', type:'Book'},
+          {icon:'🌐', title:'CTFtime.org — upcoming competitions', sub:'Free', type:'Platform'},
+        ],
+        milestones: ['Own 5 easy machines on HackTheBox','Participate in 3 CTF competitions','Write a full penetration test report on a practice app','Pass eJPT or CompTIA Security+ exam'],
+      },
+      {
+        title: 'Certification & Job Hunt',
+        subtitle: 'Get certified and get hired',
+        duration: '3–4 weeks',
+        skills: ['Security+ or CEH exam prep','Security analyst interview prep','SOC analyst workflows','Resume for cybersecurity','Bug bounty basics'],
+        gapSkills: {comm: 'Communication'},
+        tools: ['Bugcrowd / HackerOne', 'LinkedIn', 'Resume tools', 'GitHub'],
+        resources: [
+          {icon:'🎓', title:'CompTIA Security+ (SY0-701) — Professor Messer', sub:'Free videos · professormesser.com', type:'Course'},
+          {icon:'💰', title:'HackerOne bug bounty — start with easy programs', sub:'Free · hackerone.com', type:'Platform'},
+          {icon:'💼', title:'Cybersecurity jobs on Naukri, LinkedIn', sub:'Job boards', type:'Platform'},
+          {icon:'📝', title:'Build a security portfolio on GitHub', sub:'Writeups & tools', type:'Project'},
+        ],
+        milestones: ['Pass CompTIA Security+ or equivalent','Submit 3 bug bounty reports (any payout)','Complete 3 HackTheBox machines at medium difficulty','Apply to 20+ SOC analyst / security roles'],
+      },
+    ],
+  },
+  mobile: {
+    title: 'Mobile Developer',
+    icon: '📱',
+    sub: 'Android / iOS · Flutter · React Native',
+    desc: 'Mobile developers build apps that live in billions of pockets. Whether Android, iOS, or cross-platform with Flutter, this is a creative and highly in-demand career path.',
+    timeline: '4–5 months',
+    avgPkg: '₹8–22 LPA',
+    topCompanies: 'Zomato, Swiggy, PhonePe, OYO, startups',
+    phases: [
+      {
+        title: 'Mobile Fundamentals',
+        subtitle: 'Choose your platform and learn the basics',
+        duration: '3–4 weeks',
+        skills: ['Dart / Kotlin / Swift basics','Flutter OR Android Studio setup','UI components & layouts','State management basics','Version control with Git','App lifecycle & navigation'],
+        gapSkills: {code: 'Coding'},
+        tools: ['Android Studio / Xcode', 'Flutter SDK', 'Git', 'Figma'],
+        resources: [
+          {icon:'🎓', title:'Flutter official docs + codelabs', sub:'Free · flutter.dev', type:'Docs'},
+          {icon:'📺', title:'Vandad Nahavandipoor — Flutter YouTube', sub:'Free', type:'Video'},
+          {icon:'📗', title:'Flutter Complete Reference — Alberto Miola', sub:'Book', type:'Book'},
+          {icon:'💻', title:'Build 3 basic Flutter apps (calculator, todo, weather)', sub:'Starter projects', type:'Project'},
+        ],
+        milestones: ['Set up development environment & run first app','Build a multi-screen UI with navigation','Implement state management for a simple app','Deploy debug APK to a real Android device'],
+      },
+      {
+        title: 'APIs & Data',
+        subtitle: 'Connect your app to the real world',
+        duration: '4–5 weeks',
+        skills: ['REST API integration','JSON parsing','Local storage (SQLite, Hive)','Authentication (Firebase Auth)','Push notifications','Error handling & loading states'],
+        gapSkills: {code: 'Coding', proj: 'Projects'},
+        tools: ['Firebase', 'Dio / Retrofit', 'Hive / SQLite', 'Postman'],
+        resources: [
+          {icon:'📺', title:'Firebase + Flutter — official tutorials', sub:'Free · firebase.google.com', type:'Docs'},
+          {icon:'🎓', title:'Udemy — Angela Yu Flutter Bootcamp', sub:'Paid · highly rated', type:'Course'},
+          {icon:'💻', title:'Build a weather or news app using free APIs', sub:'Project', type:'Project'},
+          {icon:'📺', title:'Rivaan Ranawat — Flutter projects', sub:'YouTube · Free', type:'Video'},
+        ],
+        milestones: ['Build an app that fetches data from a public API','Implement offline caching with local storage','Add Firebase authentication to an app','Handle loading, error, and empty states gracefully'],
+      },
+      {
+        title: 'Production App Development',
+        subtitle: 'Build, test and publish a real app',
+        duration: '6–8 weeks',
+        skills: ['Advanced state management (Riverpod/Bloc)','Unit & widget testing','Performance optimization','Animations & custom UI','In-app purchases basics','Google Play / App Store publishing'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['Flutter Riverpod', 'GitHub Actions', 'Google Play Console', 'Firebase Analytics'],
+        resources: [
+          {icon:'📗', title:'Flutter Cookbook — official docs', sub:'Free · docs.flutter.dev', type:'Docs'},
+          {icon:'📺', title:'Code With Andrea — Flutter architecture', sub:'YouTube + blog', type:'Video'},
+          {icon:'💻', title:'Publish your app to Google Play Store', sub:'Capstone project', type:'Project'},
+          {icon:'🌐', title:'Pub.dev — discover Flutter packages', sub:'Free · pub.dev', type:'Resource'},
+        ],
+        milestones: ['Publish a live app on Google Play (even free)','Implement custom animations and gestures','Write tests with >60% code coverage','Get 10+ downloads and collect user feedback'],
+      },
+      {
+        title: 'Interview & Portfolio',
+        subtitle: 'Showcase apps and get hired',
+        duration: '3–4 weeks',
+        skills: ['Mobile system design basics','Technical interviews for mobile','Portfolio apps on Play Store','LinkedIn for mobile devs','DSA basics for interviews'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['LinkedIn', 'Google Play Console', 'GitHub', 'LeetCode'],
+        resources: [
+          {icon:'💻', title:'LeetCode Blind 75 — for technical rounds', sub:'Free · leetcode.com', type:'Practice'},
+          {icon:'🌐', title:'roadmap.sh/android — structured path', sub:'Free guide', type:'Guide'},
+          {icon:'💼', title:'Internshala, LinkedIn for mobile dev jobs', sub:'Job boards', type:'Platform'},
+          {icon:'📝', title:'Build portfolio: 3 apps with Play Store links', sub:'Personal', type:'Project'},
+        ],
+        milestones: ['Have 3 published apps (or TestFlight builds) in portfolio','Complete 75 LeetCode problems','Apply to 20+ mobile developer roles','Do 5 technical mock interviews'],
+      },
+    ],
+  },
+  uiux: {
+    title: 'UI/UX Designer',
+    icon: '🎨',
+    sub: 'Figma · Research · Prototyping',
+    desc: 'UI/UX Designers craft digital experiences people love — from research and wireframes to polished interfaces. This career blends psychology, aesthetics, and technical understanding.',
+    timeline: '3–5 months',
+    avgPkg: '₹6–18 LPA',
+    topCompanies: 'Flipkart, Razorpay, Meesho, Swiggy, design agencies',
+    phases: [
+      {
+        title: 'Design Fundamentals',
+        subtitle: 'Visual principles and thinking like a designer',
+        duration: '3–4 weeks',
+        skills: ['Visual design principles (typography, color, space)','Gestalt principles','UX thinking & design process','Figma basics','UI patterns & conventions','Accessibility basics'],
+        gapSkills: {code: 'Creativity', comm: 'Communication'},
+        tools: ['Figma', 'Adobe Color', 'Google Fonts', 'Coolors'],
+        resources: [
+          {icon:'🎓', title:'Google UX Design Certificate — Coursera', sub:'Paid (audit free) · 7 courses', type:'Course'},
+          {icon:'📗', title:"Don't Make Me Think — Steve Krug", sub:'Book', type:'Book'},
+          {icon:'📺', title:'DesignCourse — Gary Simon on YouTube', sub:'Free', type:'Video'},
+          {icon:'🌐', title:'Laws of UX — lawsofux.com', sub:'Free reference', type:'Guide'},
+        ],
+        milestones: ['Redesign 3 existing app screens and explain your decisions','Create a color palette and typography system','Complete Figma basics tutorial (100%)','Write a short critique of a well-known app\'s UX'],
+      },
+      {
+        title: 'User Research & Wireframing',
+        subtitle: 'Understand users before you design for them',
+        duration: '4–5 weeks',
+        skills: ['User interviews & surveys','Personas & empathy maps','User journey mapping','Information architecture','Wireframing & lo-fi prototyping','Usability testing basics'],
+        gapSkills: {comm: 'Communication', apt: 'Research'},
+        tools: ['Figma', 'Notion (research docs)', 'Maze.co (testing)', 'Optimal Workshop'],
+        resources: [
+          {icon:'📗', title:'The Design of Everyday Things — Don Norman', sub:'Book · classic', type:'Book'},
+          {icon:'💻', title:'NNGroup articles & free UX guides', sub:'Free · nngroup.com', type:'Blog'},
+          {icon:'📺', title:'AJ&Smart — design sprint & UX process', sub:'YouTube · Free', type:'Video'},
+          {icon:'🎓', title:'Interaction Design Foundation — UX Research', sub:'Paid · affordable', type:'Course'},
+        ],
+        milestones: ['Conduct 3 user interviews for a design problem','Create user personas based on real research','Map a complete user journey for an existing app','Test a prototype with 5 users and document findings'],
+      },
+      {
+        title: 'Hi-Fi Design & Prototyping',
+        subtitle: 'Create beautiful, interactive designs',
+        duration: '5–6 weeks',
+        skills: ['Figma components & design systems','Auto layout & responsive frames','Micro-interactions & motion','Prototyping for user testing','Handoff to developers','Dark mode & theming'],
+        gapSkills: {proj: 'Projects'},
+        tools: ['Figma', 'LottieFiles', 'Zeplin / Figma Dev Mode', 'Principle / ProtoPie'],
+        resources: [
+          {icon:'📺', title:'Mizko — Figma master course on YouTube', sub:'Free', type:'Video'},
+          {icon:'🌐', title:'Figma Community — free UI kits & plugins', sub:'Free · figma.com/community', type:'Resource'},
+          {icon:'💻', title:'Daily UI challenge — dailyui.co', sub:'Free email prompts', type:'Practice'},
+          {icon:'📗', title:'Refactoring UI — Adam Wathan & Steve Schoger', sub:'Book', type:'Book'},
+        ],
+        milestones: ['Design a complete app (5+ screens) with design system','Build an interactive prototype and share link','Complete 30 Daily UI challenges','Get feedback from senior designers on Dribbble or Behance'],
+      },
+      {
+        title: 'Portfolio & Job Hunt',
+        subtitle: 'Case studies and landing your first role',
+        duration: '3–4 weeks',
+        skills: ['Portfolio case study writing','UX interview preparation','Presenting design decisions','Freelance vs in-house tradeoffs','Salary negotiation','LinkedIn for designers'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['Behance / Dribbble', 'Notion portfolio', 'LinkedIn', 'Webflow (optional)'],
+        resources: [
+          {icon:'🌐', title:'UX Portfolio Formula — customized career advice', sub:'uxportfolioformula.com', type:'Guide'},
+          {icon:'📺', title:'Sarah Doody — UX career & portfolio', sub:'YouTube · Free', type:'Video'},
+          {icon:'💼', title:'LinkedIn, Behance, Dribbble for job discovery', sub:'Job platforms', type:'Platform'},
+          {icon:'📝', title:'Write 3 in-depth case studies (problem → solution)', sub:'Portfolio', type:'Project'},
+        ],
+        milestones: ['Publish a portfolio with 3 detailed case studies','Get 2 pieces of feedback from working UX designers','Apply to 20+ UX/product design roles','Complete 3 design challenge take-homes'],
+      },
+    ],
+  },
+  pm: {
+    title: 'Product / Business Analyst',
+    icon: '📊',
+    sub: 'Strategy · Analytics · Management',
+    desc: 'Product Managers and Business Analysts sit at the intersection of tech, business, and users. They define what to build and why — roles that are increasingly open to non-CS graduates with strong analytical skills.',
+    timeline: '3–4 months',
+    avgPkg: '₹8–20 LPA',
+    topCompanies: 'Amazon, Flipkart, CRED, Razorpay, consulting firms',
+    phases: [
+      {
+        title: 'Product & Business Basics',
+        subtitle: 'How products and companies work',
+        duration: '3–4 weeks',
+        skills: ['PM role & responsibilities','Product lifecycle','Business models & metrics','SWOT & competitor analysis','Stakeholder mapping','North Star metrics & KPIs'],
+        gapSkills: {comm: 'Communication', apt: 'Aptitude'},
+        tools: ['Notion', 'Google Docs', 'Miro (whiteboards)', 'Canva'],
+        resources: [
+          {icon:'📗', title:'Inspired — Marty Cagan', sub:'Book · the PM bible', type:'Book'},
+          {icon:'🎓', title:'Product School — free PM fundamentals', sub:'Free · productschool.com', type:'Course'},
+          {icon:'📺', title:'Lenny\'s Podcast — product interviews', sub:'Podcast · free', type:'Podcast'},
+          {icon:'🌐', title:'ProductHunt — study new products daily', sub:'Free · producthunt.com', type:'Resource'},
+        ],
+        milestones: ['Write a product teardown of 3 apps you use daily','Define North Star metric for a product case study','Map a complete product roadmap for a hypothetical app','Present a 5-minute product pitch in a mock setting'],
+      },
+      {
+        title: 'Data & Analytics',
+        subtitle: 'Let data drive every decision',
+        duration: '4–5 weeks',
+        skills: ['SQL for analytics','Excel / Google Sheets (advanced)','A/B testing fundamentals','Funnel analysis & retention','Cohort analysis','Dashboards & reporting'],
+        gapSkills: {apt: 'Aptitude', code: 'Analytics'},
+        tools: ['SQL', 'Google Sheets', 'Tableau / Power BI', 'Mixpanel / Amplitude'],
+        resources: [
+          {icon:'💻', title:'Mode SQL Tutorial — free course', sub:'Free · mode.com/sql-tutorial', type:'Course'},
+          {icon:'🎓', title:'Google Data Analytics Certificate', sub:'Coursera · audit free', type:'Course'},
+          {icon:'📗', title:'Measure What Matters — John Doerr (OKRs)', sub:'Book', type:'Book'},
+          {icon:'💻', title:'StrataScratch — SQL product analyst questions', sub:'Free tier', type:'Practice'},
+        ],
+        milestones: ['Write 20+ SQL queries on a real dataset','Build a dashboard tracking 5 product KPIs','Design a complete A/B test (hypothesis + metrics + result)','Analyze a funnel and identify the biggest drop-off point'],
+      },
+      {
+        title: 'Product Execution',
+        subtitle: 'PRDs, roadmaps, and working with engineers',
+        duration: '5–6 weeks',
+        skills: ['Writing PRDs (Product Requirement Docs)','User story writing','Agile & Scrum methodology','Working with design & engineering','Prioritization (RICE, ICE)','OKR setting & tracking'],
+        gapSkills: {proj: 'Projects', intern: 'Experience'},
+        tools: ['JIRA / Linear', 'Confluence', 'Figma (reading wireframes)', 'Notion roadmap'],
+        resources: [
+          {icon:'📗', title:'The Lean Startup — Eric Ries', sub:'Book', type:'Book'},
+          {icon:'📺', title:'Shreyas Doshi — PM frameworks on Twitter/X', sub:'Free · @shreyas', type:'Blog'},
+          {icon:'💻', title:'Reforge growth & retention courses', sub:'Paid · reforge.com', type:'Course'},
+          {icon:'💡', title:'Run a mock product sprint for any problem', sub:'Personal exercise', type:'Project'},
+        ],
+        milestones: ['Write a complete PRD for a feature you want to see built','Create a 3-month product roadmap with priorities & rationale','Participate in a hackathon as PM/BA','Shadow or interview a working PM for insights'],
+      },
+      {
+        title: 'Interview & Portfolio',
+        subtitle: 'Case studies, guesstimates and getting hired',
+        duration: '3–4 weeks',
+        skills: ['Product case interviews','Estimation / guesstimate questions','Behavioral interview (STAR)','PM portfolio & writing samples','Networking with PMs','Offer negotiation'],
+        gapSkills: {comm: 'Communication'},
+        tools: ['LinkedIn', 'Notion portfolio', 'Medium (blogging)', 'Glassdoor'],
+        resources: [
+          {icon:'📗', title:'Decode and Conquer — Lewis Lin', sub:'Book · PM interview prep', type:'Book'},
+          {icon:'💻', title:'PM Exercises — pmexercises.com', sub:'Free case library', type:'Practice'},
+          {icon:'📺', title:'Exponent — PM interview prep YouTube', sub:'Free + paid', type:'Video'},
+          {icon:'🌐', title:'Product Alliance — community & cases', sub:'productalliance.com', type:'Community'},
+        ],
+        milestones: ['Complete 20+ product case practice problems','Write 3 product analysis blog posts on Medium','Apply to 25+ APM / BA / Product roles','Do 5 mock case interviews with peers'],
+      },
+    ],
+  },
+};
+
+function showRoadmapPage(){
+  const fd=FIELD_DATA[S.field]||FIELD_DATA.sde;
+  // Sidebar - field badge
+  document.getElementById('rm-field-icon').textContent=fd.icon;
+  document.getElementById('rm-field-title').textContent=fd.title;
+  document.getElementById('rm-field-sub').textContent=fd.sub;
+
+  // Sidebar - skill gaps
+  const gapRows=[
+    {label:'CGPA',val:S.cgpa.toFixed(1),ok:S.cgpa>=7.5,warn:S.cgpa>=6&&S.cgpa<7.5},
+    {label:'Coding',val:`${S.code}/10`,ok:S.code>=7,warn:S.code>=5&&S.code<7},
+    {label:'DSA',val:`${S.dsa}/10`,ok:S.dsa>=7,warn:S.dsa>=5&&S.dsa<7},
+    {label:'Communication',val:`${S.comm}/10`,ok:S.comm>=7,warn:S.comm>=5&&S.comm<7},
+    {label:'Projects',val:String(S.proj),ok:S.proj>=3,warn:S.proj>=1&&S.proj<3},
+    {label:'Internships',val:String(S.intern),ok:S.intern>=1,warn:false},
+  ];
+  document.getElementById('rm-gaps').innerHTML=gapRows.map(r=>`<div class="rms-gap-row"><span class="rms-gap-label">${r.label}</span><span class="rms-gap-val ${r.ok?'ok':r.warn?'warn':'bad'}">${r.val} ${r.ok?'✓':r.warn?'~':'⚠'}</span></div>`).join('');
+
+  // Sidebar - phase nav
+  document.getElementById('rm-phase-nav').innerHTML=fd.phases.map((ph,i)=>`<div class="phase-nav-item" onclick="scrollToPhase(${i})"><span class="pni-dot"></span>Phase ${i+1}: ${ph.title}</div>`).join('');
+
+  // Hero
+  document.getElementById('rm-hero').innerHTML=`
+    <div class="rm-hero-tag">CAREER ROADMAP — ${fd.title.toUpperCase()}</div>
+    <div class="rm-hero-title">${fd.icon} Your Path to ${fd.title}</div>
+    <div class="rm-hero-sub">${fd.desc}</div>
+    <div class="rm-meta-row">
+      <span class="rm-meta-chip">⏱ ${fd.timeline} total</span>
+      <span class="rm-meta-chip">💰 Avg: ${fd.avgPkg}</span>
+      <span class="rm-meta-chip">🏢 ${fd.topCompanies}</span>
+    </div>`;
+
+  // Build phases
+  const urgentGaps=[];
+  if(S.cgpa<7)urgentGaps.push('CGPA below 7');
+  if(S.backlogs>0)urgentGaps.push(`${S.backlogs} active backlog(s)`);
+  if(S.code<5)urgentGaps.push('Coding skills need work');
+  if(S.dsa<5)urgentGaps.push('DSA fundamentals weak');
+
+  let phasesHTML='';
+  if(urgentGaps.length>0){
+    phasesHTML+=`<div class="gap-alert"><strong>⚠ Fix These First Before Starting Any Phase:</strong> ${urgentGaps.join(' · ')}. These will block your progress at any company.</div>`;
+  }
+
+  fd.phases.forEach((ph,i)=>{
+    const phaseClass=`phase-${i+1}`;
+    const gapSkillNames=Object.values(ph.gapSkills||{});
+    const hasGaps=gapSkillNames.some(sk=>{
+      if(sk==='Coding')return S.code<6;
+      if(sk==='DSA'||sk==='Problem Solving')return S.dsa<6;
+      if(sk==='Communication')return S.comm<6;
+      if(sk==='Aptitude'||sk==='Research')return S.apt<6;
+      if(sk==='Projects')return S.proj<2;
+      if(sk==='Experience')return S.intern<1;
+      return false;
+    });
+
+    const skillsHTML=ph.skills.map(sk=>{
+      let cls='';
+      if(sk.toLowerCase().includes('dsa')||sk.toLowerCase().includes('algorithm'))cls=S.dsa<6?'gap':'strong';
+      else if(sk.toLowerCase().includes('coding')||sk.toLowerCase().includes('python')||sk.toLowerCase().includes('javascript'))cls=S.code<6?'gap':'strong';
+      return `<span class="skill-chip ${cls}">${sk}</span>`;
+    }).join('');
+
+    const resourcesHTML=ph.resources.map(r=>`
+      <div class="resource-item">
+        <span class="res-icon">${r.icon}</span>
+        <div class="res-text"><strong>${r.title}</strong><br>${r.sub}<span class="res-type">${r.type}</span></div>
+      </div>`).join('');
+
+    const milestonesHTML=ph.milestones.map(m=>`<li>${m}</li>`).join('');
+
+    phasesHTML+=`
+    <div class="phase-block ${phaseClass}" id="phase-block-${i}">
+      <div class="phase-header" onclick="togglePhase(${i})">
+        <div class="phase-num">0${i+1}</div>
+        <div class="phase-meta">
+          <div class="phase-title-text">${ph.title}</div>
+          <div class="phase-subtitle">${ph.subtitle}</div>
+        </div>
+        <span class="phase-duration">${ph.duration}</span>
+        ${hasGaps?'<span style="font-family:var(--mono);font-size:.6rem;color:var(--red);padding:3px 8px;border:1px solid rgba(248,81,73,.3);background:var(--red-dim);">GAPS HERE</span>':''}
+        <span class="phase-toggle" id="ph-toggle-${i}">▼</span>
+      </div>
+      <div class="phase-body" id="ph-body-${i}">
+        <div class="pb-section">
+          <div class="pbs-title">Skills to Learn</div>
+          <div>${skillsHTML}</div>
+        </div>
+        <div class="pb-section">
+          <div class="pbs-title">Tools & Platforms</div>
+          <div>${ph.tools.map(t=>`<span class="skill-chip">${t}</span>`).join('')}</div>
+        </div>
+        <div class="pb-section">
+          <div class="pbs-title">Resources</div>
+          ${resourcesHTML}
+        </div>
+        <div class="pb-section">
+          <div class="pbs-title">Phase Milestones</div>
+          <ul class="milestone-list">${milestonesHTML}</ul>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('phases-container').innerHTML=phasesHTML;
+  document.getElementById('tab-roadmap').classList.add('active');
+  showPage('roadmap-page');
+}
+
+function togglePhase(i){
+  const body=document.getElementById('ph-body-'+i);
+  const toggle=document.getElementById('ph-toggle-'+i);
+  if(body.style.display==='none'){body.style.display='';toggle.textContent='▼';}
+  else{body.style.display='none';toggle.textContent='▶';}
+}
+function scrollToPhase(i){
+  const el=document.getElementById('phase-block-'+i);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+  document.querySelectorAll('.phase-nav-item').forEach((n,j)=>{n.classList.toggle('active',j===i);});
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Enter'){const btn=document.querySelector('.step.active .btn-fwd-nav');if(btn)btn.click();}});
+
+function downloadRoadmapPDF(){
+  const btn=document.getElementById('rm-pdf-btn');
+  btn.textContent='⏳ Generating...';btn.disabled=true;
+  setTimeout(()=>{
+    try{
+      const {jsPDF}=window.jspdf;
+      const doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      const PW=210,PH=297;
+      const fd=FIELD_DATA[S.field]||FIELD_DATA.sde;
+      const NAVY=[10,30,60],DARK=[20,30,50],MID=[70,85,110],WHITE=[255,255,255],MUTED=[130,145,165];
+      const PHASE_COLS=[[40,110,210],[180,140,30],[140,60,210],[40,155,80]];
+      const now=new Date();
+
+      // ── Helper functions ─────────────────────────────────────
+      function footer(pageNum,total){
+        doc.setFillColor(...NAVY);doc.rect(0,PH-14,PW,14,'F');
+        doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor(140,170,210);
+        doc.text('PlaceIQ Career Roadmap  |  Confidential — For Candidate Use Only',PW/2,PH-5,{align:'center'});
+        doc.setTextColor(80,120,180);doc.text(`Page ${pageNum} of ${total}`,PW-14,PH-5,{align:'right'});
+      }
+      function pageHeader(subtitle){
+        doc.setFillColor(...NAVY);doc.rect(0,0,PW,12,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(7.5);doc.setTextColor(...WHITE);
+        doc.text('PlaceIQ — Career Roadmap',14,8);
+        doc.setFont('helvetica','normal');doc.setTextColor(140,170,210);
+        doc.text(subtitle,PW-14,8,{align:'right'});
+      }
+      function sectionHead(y,txt,col){
+        doc.setFillColor(...col);doc.rect(14,y,PW-28,8,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...WHITE);
+        doc.text(txt,18,y+5.8);
+        return y+13;
+      }
+      function wrapText(txt,x,y,maxW,lineH){
+        const lines=doc.splitTextToSize(txt,maxW);
+        doc.text(lines,x,y);
+        return y+lines.length*lineH;
+      }
+
+      // ── PAGE 1 — Cover ───────────────────────────────────────
+      doc.setFillColor(...NAVY);doc.rect(0,0,PW,PH,'F');
+      // Decorative grid
+      doc.setDrawColor(255,255,255,0.03);doc.setLineWidth(0.2);
+      for(let i=0;i<PW;i+=12){doc.line(i,0,i,PH);}
+      for(let i=0;i<PH;i+=12){doc.line(0,i,PW,i);}
+      // Title block
+      doc.setFillColor(20,45,90);doc.rect(0,60,PW,120,'F');
+      doc.setFillColor(...PHASE_COLS[0]);doc.rect(0,60,4,120,'F');
+      doc.setFont('helvetica','bold');doc.setFontSize(10);doc.setTextColor(160,190,230);
+      doc.text('PLACEIQ  —  CAREER ROADMAP',PW/2,75,{align:'center'});
+      doc.setFont('helvetica','bold');doc.setFontSize(28);doc.setTextColor(...WHITE);
+      const titleLines=doc.splitTextToSize(fd.title,PW-40);
+      doc.text(titleLines,PW/2,92,{align:'center'});
+      doc.setFont('helvetica','normal');doc.setFontSize(11);doc.setTextColor(140,170,210);
+      doc.text(fd.sub,PW/2,92+titleLines.length*14,{align:'center'});
+      // Candidate info box
+      doc.setFillColor(8,15,35);doc.rect(20,196,PW-40,50,'F');
+      doc.setDrawColor(...PHASE_COLS[0]);doc.setLineWidth(0.5);doc.rect(20,196,PW-40,50,'S');
+      doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(140,170,210);
+      doc.text('CANDIDATE',30,206);doc.text('TARGET FIELD',30,222);doc.text('TIMELINE',30,238);doc.text('AVG PACKAGE',30,254);
+      doc.setFont('helvetica','bold');doc.setFontSize(9);doc.setTextColor(...WHITE);
+      doc.text(S.name||'—',80,206);
+      doc.text(fd.title,80,222);
+      doc.text(fd.timeline,80,238);
+      doc.setTextColor(80,200,120);doc.text(fd.avgPkg,80,254);
+      // Phase overview strip
+      doc.setFillColor(5,10,25);doc.rect(0,262,PW,22,'F');
+      fd.phases.forEach((ph,i)=>{
+        const x=14+i*(PW-28)/4+4;
+        doc.setFillColor(...PHASE_COLS[i]);doc.rect(x-2,264,38,18,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(6);doc.setTextColor(...WHITE);
+        doc.text(`PHASE ${i+1}`,x,269);
+        doc.setFont('helvetica','normal');doc.setFontSize(5.5);doc.setTextColor(220,230,255);
+        const lines=doc.splitTextToSize(ph.title,34);
+        doc.text(lines,x,274);
+      });
+      // Date
+      doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(80,100,140);
+      doc.text(`Generated: ${now.toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'})}`,PW/2,292,{align:'center'});
+
+      // Count total pages: cover + 1 overview + 1 per phase
+      const totalPages=2+fd.phases.length;
+
+      // ── PAGE 2 — Overview & Skill Gaps ───────────────────────
+      doc.addPage();
+      pageHeader(`${S.name} — Overview`);
+      let Y=20;
+      // Field description
+      doc.setFillColor(248,250,254);doc.rect(14,Y,PW-28,24,'F');
+      doc.setFillColor(...PHASE_COLS[0]);doc.rect(14,Y,3,24,'F');
+      doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...DARK);doc.text('About This Career Path',20,Y+7);
+      doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...MID);
+      const descLines=doc.splitTextToSize(fd.desc,PW-36);
+      doc.text(descLines,20,Y+13);
+      Y+=30;
+      // Two-column: skill gaps + meta
+      Y=sectionHead(Y,'YOUR SKILL GAPS vs. FIELD REQUIREMENTS',NAVY);
+      const gaps=[
+        {n:'CGPA',v:S.cgpa.toFixed(1),req:'7.5+',ok:S.cgpa>=7.5,warn:S.cgpa>=6&&S.cgpa<7.5},
+        {n:'Coding',v:`${S.code}/10`,req:'7+',ok:S.code>=7,warn:S.code>=5&&S.code<7},
+        {n:'DSA',v:`${S.dsa}/10`,req:'6+',ok:S.dsa>=6,warn:S.dsa>=4&&S.dsa<6},
+        {n:'Communication',v:`${S.comm}/10`,req:'6+',ok:S.comm>=6,warn:S.comm>=4&&S.comm<6},
+        {n:'Aptitude',v:`${S.apt}/10`,req:'6+',ok:S.apt>=6,warn:S.apt>=4&&S.apt<6},
+        {n:'Projects',v:String(S.proj),req:'3+',ok:S.proj>=3,warn:S.proj>=1&&S.proj<3},
+        {n:'Internships',v:String(S.intern),req:'1+',ok:S.intern>=1,warn:false},
+        {n:'Backlogs',v:S.backlogs===0?'None':String(S.backlogs),req:'0',ok:S.backlogs===0,warn:false},
+      ];
+      gaps.forEach((g,i)=>{
+        const ry=Y+i*9.5;
+        if(i%2===0){doc.setFillColor(248,250,254);doc.rect(14,ry-2,PW-28,9.5,'F');}
+        const col=g.ok?[40,155,80]:g.warn?[180,140,30]:[200,60,55];
+        doc.setFillColor(...col);doc.rect(14,ry-2,3,9.5,'F');
+        doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MID);doc.text(g.n,20,ry+4);
+        doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...DARK);doc.text(g.v,90,ry+4);
+        doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(...MUTED);doc.text(`Required: ${g.req}`,120,ry+4);
+        const status=g.ok?'✓ MET':g.warn?'~ CLOSE':'✗ GAP';
+        doc.setFont('helvetica','bold');doc.setFontSize(7);doc.setTextColor(...col);doc.text(status,PW-18,ry+4,{align:'right'});
+      });
+      Y+=gaps.length*9.5+10;
+      // Phase overview table
+      Y=sectionHead(Y,'PHASE OVERVIEW',NAVY);
+      fd.phases.forEach((ph,i)=>{
+        if(Y>PH-40){return;}
+        const ry=Y+i*18;
+        doc.setFillColor(...PHASE_COLS[i].map(v=>Math.round(v+(255-v)*.9)));doc.rect(14,ry-2,PW-28,16,'F');
+        doc.setFillColor(...PHASE_COLS[i]);doc.rect(14,ry-2,3,16,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(7);doc.setTextColor(...PHASE_COLS[i]);
+        doc.text(`PHASE ${i+1}  ·  ${ph.duration}`,20,ry+4);
+        doc.setFont('helvetica','bold');doc.setFontSize(8.5);doc.setTextColor(...DARK);doc.text(ph.title,20,ry+10);
+        doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(...MID);doc.text(ph.subtitle,PW-18,ry+10,{align:'right'});
+      });
+      footer(2,totalPages);
+
+      // ── PAGES 3+ — One page per phase ────────────────────────
+      fd.phases.forEach((ph,pi)=>{
+        doc.addPage();
+        const PC=PHASE_COLS[pi];
+        pageHeader(`Phase ${pi+1}: ${ph.title} — ${S.name}`);
+        Y=18;
+        // Phase hero bar
+        doc.setFillColor(...PC);doc.rect(0,Y,PW,16,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(7);doc.setTextColor(220,235,255);
+        doc.text(`PHASE ${pi+1}  ·  ${ph.duration.toUpperCase()}`,16,Y+6);
+        doc.setFont('helvetica','bold');doc.setFontSize(12);doc.setTextColor(...WHITE);
+        doc.text(ph.title,16,Y+13);
+        doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(200,220,255);
+        doc.text(ph.subtitle,PW-16,Y+13,{align:'right'});
+        Y+=22;
+
+        // Skills to learn
+        Y=sectionHead(Y,'SKILLS TO LEARN',PC);
+        const colW=(PW-32)/3;
+        ph.skills.forEach((sk,si)=>{
+          const col=si%3,row=Math.floor(si/3);
+          const sx=16+col*colW,sy=Y+row*8;
+          if(sy>PH-50){return;}
+          doc.setFillColor(...PC.map(v=>Math.round(v+(255-v)*.88)));
+          doc.roundedRect(sx,sy-2,colW-4,7,1,1,'F');
+          doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(...DARK);
+          doc.text(sk,sx+3,sy+3,{maxWidth:colW-8});
+        });
+        Y+=Math.ceil(ph.skills.length/3)*8+8;
+
+        // Resources & Milestones in two columns
+        const halfW=(PW-32)/2;
+        const leftX=14,rightX=14+halfW+4;
+        let leftY=Y,rightY=Y;
+
+        // Resources (left)
+        doc.setFillColor(...NAVY);doc.rect(leftX,leftY,halfW,7,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(7.5);doc.setTextColor(...WHITE);
+        doc.text('RESOURCES',leftX+4,leftY+5);
+        leftY+=11;
+        ph.resources.forEach(r=>{
+          if(leftY>PH-30)return;
+          doc.setFillColor(248,250,254);doc.rect(leftX,leftY-2,halfW,16,'F');
+          doc.setFillColor(...PC);doc.rect(leftX,leftY-2,2,16,'F');
+          doc.setFont('helvetica','bold');doc.setFontSize(7.5);doc.setTextColor(...DARK);
+          const titleLines=doc.splitTextToSize(r.title,halfW-14);
+          doc.text(titleLines,leftX+6,leftY+4);
+          doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor(...MUTED);
+          doc.text(r.sub,leftX+6,leftY+4+titleLines.length*4);
+          doc.setFillColor(...PC.map(v=>Math.round(v+(255-v)*.85)));
+          doc.roundedRect(leftX+halfW-18,leftY,14,5,1,1,'F');
+          doc.setFont('helvetica','bold');doc.setFontSize(5.5);doc.setTextColor(...PC);
+          doc.text(r.type.substring(0,8).toUpperCase(),leftX+halfW-11,leftY+3.5,{align:'center'});
+          leftY+=19;
+        });
+
+        // Milestones (right)
+        doc.setFillColor(...NAVY);doc.rect(rightX,rightY,halfW,7,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(7.5);doc.setTextColor(...WHITE);
+        doc.text('PHASE MILESTONES',rightX+4,rightY+5);
+        rightY+=11;
+        ph.milestones.forEach((m,mi)=>{
+          if(rightY>PH-30)return;
+          const mLines=doc.splitTextToSize(m,halfW-14);
+          const mH=Math.max(12,mLines.length*5+6);
+          doc.setFillColor(248,250,254);doc.rect(rightX,rightY-2,halfW,mH,'F');
+          doc.setFillColor(...PC);doc.circle(rightX+5,rightY+mH/2-2,2.5,'F');
+          doc.setFont('helvetica','bold');doc.setFontSize(6.5);doc.setTextColor(...WHITE);
+          doc.text(String(mi+1),rightX+5,rightY+mH/2,{align:'center'});
+          doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...DARK);
+          doc.text(mLines,rightX+11,rightY+5);
+          rightY+=mH+3;
+        });
+
+        // Tools strip at bottom
+        const btY=Math.max(leftY,rightY)+4;
+        if(btY<PH-30){
+          doc.setFillColor(240,244,252);doc.rect(14,btY,PW-28,10,'F');
+          doc.setFont('helvetica','bold');doc.setFontSize(6.5);doc.setTextColor(...MID);
+          doc.text('TOOLS:',18,btY+7);
+          let tx=38;
+          ph.tools.forEach(t=>{
+            if(tx>PW-20)return;
+            const tw=doc.getStringUnitWidth(t)*6.5*0.35+8;
+            doc.setFillColor(...PC.map(v=>Math.round(v+(255-v)*.8)));
+            doc.roundedRect(tx,btY+2,tw,6,1,1,'F');
+            doc.setFont('helvetica','normal');doc.setFontSize(6);doc.setTextColor(...PC);
+            doc.text(t,tx+tw/2,btY+6.5,{align:'center'});
+            tx+=tw+4;
+          });
+        }
+        footer(pi+3,totalPages);
+      });
+
+      doc.save(`PlaceIQ_Roadmap_${fd.title.replace(/\s+/g,'_')}_${S.name.replace(/\s+/g,'_')}.pdf`);
+      btn.textContent='✓ Downloaded!';btn.disabled=false;
+      setTimeout(()=>{btn.textContent='⬇ Download Roadmap PDF';},3000);
+    }catch(err){
+      console.error(err);
+      btn.textContent='⬇ Download Roadmap PDF';btn.disabled=false;
+    }
+  },100);
+}
 function downloadPDF(){
   const btn=document.getElementById('pdf-btn');btn.textContent='⏳ Generating...';btn.disabled=true;
   setTimeout(()=>{
@@ -749,12 +1851,10 @@ function downloadPDF(){
       const doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
       const PW=210,PH=297;
       const score=parseInt(document.getElementById('res-num').textContent)||0;
-      const NAVY=[10,30,60],DARK=[20,30,50],MID=[70,85,110],LIGHT=[240,244,250],WHITE=[255,255,255],MUTED=[130,145,165],BLUE=[40,110,210];
+      const NAVY=[10,30,60],DARK=[20,30,50],MID=[70,85,110],WHITE=[255,255,255],MUTED=[130,145,165],BLUE=[40,110,210];
       const scoreCol=score>=80?[40,155,80]:score>=65?[40,110,210]:score>=50?[180,140,30]:score>=35?[200,110,40]:[200,60,55];
       function hr(y){doc.setDrawColor(230,235,245);doc.setLineWidth(.3);doc.line(14,y,PW-14,y);}
       function secHead(y,txt){doc.setFillColor(...NAVY);doc.rect(14,y,PW-28,9,'F');doc.setFont('helvetica','bold');doc.setFontSize(8.5);doc.setTextColor(...WHITE);doc.text(txt,18,y+6.2);return y+14;}
-
-      // PAGE 1
       doc.setFillColor(...WHITE);doc.rect(0,0,PW,PH,'F');
       doc.setFillColor(...NAVY);doc.rect(0,0,PW,46,'F');
       doc.setFont('helvetica','bold');doc.setFontSize(24);doc.setTextColor(...WHITE);doc.text('PlaceIQ',18,22);
@@ -764,14 +1864,12 @@ function downloadPDF(){
       doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(120,155,200);
       doc.text(now.toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'}),PW-18,30,{align:'right'});
       doc.text(`Report ID: PIQ-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}-${Math.random().toString(36).substr(2,6).toUpperCase()}`,PW-18,36,{align:'right'});
-      doc.setFillColor(240,244,250);doc.rect(0,46,PW,2,'F');
       doc.setFillColor(248,250,254);doc.rect(0,48,PW,38,'F');
       doc.setFillColor(...scoreCol);doc.rect(0,48,4,38,'F');
       doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...MUTED);doc.text('CANDIDATE NAME',18,58);
       doc.setFont('helvetica','bold');doc.setFontSize(20);doc.setTextColor(...DARK);doc.text(S.name,18,70);
       doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...MUTED);
       doc.text(`Assessment Date: ${now.toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'})}  |  ${now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}`,18,80);
-      doc.setFillColor(...WHITE);doc.rect(0,86,PW,2,'F');
       const scCx=PW/2,scCy=145,scR=38;
       doc.setFillColor(248,250,254);doc.circle(scCx,scCy,scR+6,'F');
       doc.setDrawColor(225,230,240);doc.setLineWidth(7);doc.circle(scCx,scCy,scR,'S');
@@ -781,47 +1879,33 @@ function downloadPDF(){
       doc.setFillColor(...WHITE);doc.circle(scCx,scCy,scR-5,'F');
       doc.setFont('helvetica','bold');doc.setFontSize(34);doc.setTextColor(...scoreCol);doc.text(String(score),scCx,scCy+7,{align:'center'});
       doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MUTED);doc.text('out of 100',scCx,scCy+16,{align:'center'});
-      doc.setFontSize(7.5);doc.text('PLACEMENT PROBABILITY SCORE',scCx,scCy-scR-8,{align:'center'});
       const verd=score>=80?'Elite Candidate':score>=65?'Strong Profile':score>=50?'Developing Profile':score>=35?'Needs Improvement':'Immediate Action Required';
       doc.setFont('helvetica','bold');doc.setFontSize(15);doc.setTextColor(...scoreCol);doc.text(verd,scCx,scCy+scR+16,{align:'center'});
       const bX=30,bY=scCy+scR+26,bW=PW-60,bH=6;
       doc.setFillColor(225,230,240);doc.roundedRect(bX,bY,bW,bH,2,2,'F');
       doc.setFillColor(...scoreCol);doc.roundedRect(bX,bY,(score/100)*bW,bH,2,2,'F');
-      ['0','25','50','75','100'].forEach((l,i)=>{const tx=bX+(i/4)*bW;doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor(...MUTED);doc.text(l,tx,bY+bH+5,{align:'center'});doc.setDrawColor(200,210,225);doc.setLineWidth(.2);doc.line(tx,bY-1,tx,bY+bH+1);});
-      doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor(...MUTED);doc.text('Poor',bX,bY-2);doc.text('Excellent',bX+bW,bY-2,{align:'right'});
-      const bands=[{l:'Critical',c:[200,60,55]},{l:'Needs Work',c:[200,110,40]},{l:'Average',c:[180,140,30]},{l:'Strong',c:[40,110,210]},{l:'Elite',c:[40,155,80]}];
-      const bandY=bY+bH+16,bandH=8,bandW=bW/5;
-      bands.forEach((b,i)=>{doc.setFillColor(...b.c.map(v=>Math.round(v+(255-v)*.7)));doc.rect(bX+i*bandW,bandY,bandW,bandH,'F');doc.setFont('helvetica','normal');doc.setFontSize(5.5);doc.setTextColor(...b.c);doc.text(b.l,bX+i*bandW+bandW/2,bandY+5.5,{align:'center'});});
-      const mX=bX+(score/100)*bW;doc.setFillColor(...DARK);doc.triangle(mX-3,bandY-2,mX+3,bandY-2,mX,bandY+1,'F');
       doc.setFillColor(...NAVY);doc.rect(0,PH-16,PW,16,'F');doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(140,170,210);
       doc.text('PlaceIQ — Placement Analytics Platform  |  Confidential — For Candidate Use Only',PW/2,PH-7,{align:'center'});
-      doc.setTextColor(80,120,180);doc.text('Page 1 of 2',PW-18,PH-7,{align:'right'});
-
-      // PAGE 2
+      // Page 2
       doc.addPage();doc.setFillColor(...WHITE);doc.rect(0,0,PW,PH,'F');
-      doc.setFillColor(...NAVY);doc.rect(0,0,PW,14,'F');doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...WHITE);doc.text('PlaceIQ — Detailed Assessment Report',14,9.5);doc.setFont('helvetica','normal');doc.setTextColor(140,170,210);doc.text(`${S.name}  |  Score: ${score}/100  |  ${verd}`,PW-14,9.5,{align:'right'});
+      doc.setFillColor(...NAVY);doc.rect(0,0,PW,14,'F');doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...WHITE);doc.text('PlaceIQ — Detailed Assessment Report',14,9.5);
       let Y=22;
-      Y=secHead(Y,'A.  INPUT PARAMETERS');
-      const inputs=[['CGPA',`${S.cgpa.toFixed(1)} / 10.0`,S.cgpa/10,S.cgpa>=7.5?'GOOD':S.cgpa>=6.5?'AVERAGE':'LOW'],['Coding Skills',`${S.code} / 10`,S.code/10,S.code>=7?'GOOD':S.code>=5?'AVERAGE':'LOW'],['Communication Skills',`${S.comm} / 10`,S.comm/10,S.comm>=7?'GOOD':S.comm>=5?'AVERAGE':'LOW'],['Aptitude',`${S.apt} / 10`,S.apt/10,S.apt>=7?'GOOD':S.apt>=5?'AVERAGE':'LOW'],['DSA / Problem Solving',`${S.dsa} / 10`,S.dsa/10,S.dsa>=7?'GOOD':S.dsa>=5?'AVERAGE':'LOW'],['Projects Completed',String(S.proj),Math.min(1,S.proj/5),S.proj>=3?'GOOD':S.proj>=1?'AVERAGE':'LOW'],['Internships Done',String(S.intern),Math.min(1,S.intern/2),S.intern>=1?'GOOD':'LOW'],['Active Backlogs',S.backlogs===0?'None':String(S.backlogs),0,S.backlogs===0?'CLEAR':'RISK']];
-      inputs.forEach((row,i)=>{const ry=Y+i*10;if(i%2===0){doc.setFillColor(248,250,254);doc.rect(14,ry-2.5,PW-28,10,'F');}doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MID);doc.text(row[0],18,ry+4);const tagCol=row[3]==='GOOD'||row[3]==='CLEAR'?[40,155,80]:row[3]==='RISK'||row[3]==='LOW'?[200,60,55]:[180,140,30];doc.setFont('helvetica','bold');doc.setFontSize(6.5);doc.setTextColor(...tagCol);doc.text(row[3],PW-18,ry+4,{align:'right'});doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...DARK);doc.text(row[1],PW-46,ry+4,{align:'right'});if(row[0]!=='Active Backlogs'){const bx=80,bw=58,bh=2;doc.setFillColor(225,230,240);doc.rect(bx,ry+1,bw,bh,'F');doc.setFillColor(...BLUE);doc.rect(bx,ry+1,bw*row[2],bh,'F');}});
+      Y=secHead(Y,'PARAMETER ANALYSIS');
+      const inputs=[['CGPA',`${S.cgpa.toFixed(1)} / 10.0`,S.cgpa/10,S.cgpa>=7.5?'GOOD':S.cgpa>=6.5?'AVERAGE':'LOW'],['Coding Skills',`${S.code} / 10`,S.code/10,S.code>=7?'GOOD':S.code>=5?'AVERAGE':'LOW'],['Communication',`${S.comm} / 10`,S.comm/10,S.comm>=7?'GOOD':S.comm>=5?'AVERAGE':'LOW'],['Aptitude',`${S.apt} / 10`,S.apt/10,S.apt>=7?'GOOD':S.apt>=5?'AVERAGE':'LOW'],['DSA',`${S.dsa} / 10`,S.dsa/10,S.dsa>=7?'GOOD':S.dsa>=5?'AVERAGE':'LOW'],['Projects',String(S.proj),Math.min(1,S.proj/5),S.proj>=3?'GOOD':S.proj>=1?'AVERAGE':'LOW'],['Internships',String(S.intern),Math.min(1,S.intern/2),S.intern>=1?'GOOD':'LOW'],['Backlogs',S.backlogs===0?'None':String(S.backlogs),0,S.backlogs===0?'CLEAR':'RISK'],['Target Field',(FIELD_DATA[S.field]||FIELD_DATA.sde).title,1,'INFO']];
+      inputs.forEach((row,i)=>{const ry=Y+i*10;if(i%2===0){doc.setFillColor(248,250,254);doc.rect(14,ry-2.5,PW-28,10,'F');}doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MID);doc.text(row[0],18,ry+4);const tagCol=row[3]==='GOOD'||row[3]==='CLEAR'||row[3]==='INFO'?[40,155,80]:row[3]==='RISK'||row[3]==='LOW'?[200,60,55]:[180,140,30];doc.setFont('helvetica','bold');doc.setFontSize(6.5);doc.setTextColor(...tagCol);doc.text(row[3],PW-18,ry+4,{align:'right'});doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...DARK);doc.text(row[1],PW-46,ry+4,{align:'right'});});
       Y+=inputs.length*10+8;hr(Y);Y+=8;
-      Y=secHead(Y,'B.  SCORE CONTRIBUTION ANALYSIS');
-      const bkR=[{n:'CGPA',pts:S.cgpa>=9?28:S.cgpa>=8.5?25:S.cgpa>=8?22:S.cgpa>=7.5?18:S.cgpa>=7?14:S.cgpa>=6.5?10:S.cgpa>=6?6:2,max:28},{n:'Coding Skills',pts:Math.round(S.code*1.8),max:18},{n:'Communication',pts:Math.round(S.comm*1.2),max:12},{n:'Aptitude',pts:Math.round(S.apt),max:10},{n:'DSA / Problem Solving',pts:Math.round(S.dsa*1.4),max:14},{n:'Projects',pts:Math.min(S.proj,5)*2,max:10},{n:'Internships',pts:Math.min(S.intern,2)*4,max:8},{n:'Backlog Penalty',pts:-S.backlogs*7,max:0,penalty:true}];
-      bkR.forEach((b,i)=>{const ry=Y+i*9.5;if(i%2===0){doc.setFillColor(248,250,254);doc.rect(14,ry-2,PW-28,9.5,'F');}doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...MID);doc.text(b.n,18,ry+4);const isNeg=b.pts<0;doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...(isNeg?[200,60,55]:b.pts>0?[40,140,75]:MID));doc.text((isNeg?'':'+')+(b.pts)+' pts',PW-18,ry+4,{align:'right'});if(!b.penalty){const bx=85,bw=55,bh=2;doc.setFillColor(225,230,240);doc.rect(bx,ry+1,bw,bh,'F');doc.setFillColor(...BLUE);doc.rect(bx,ry+1,bw*(b.pts/b.max),bh,'F');doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor(...MUTED);doc.text(`${b.pts}/${b.max}`,bx+bw+3,ry+4);}});
-      Y+=bkR.length*9.5+4;doc.setFillColor(...DARK);doc.rect(14,Y,PW-28,11,'F');doc.setFont('helvetica','bold');doc.setFontSize(9);doc.setTextColor(...WHITE);doc.text('TOTAL PLACEMENT SCORE',18,Y+7.5);doc.setTextColor(...scoreCol.map(v=>Math.min(255,v+100)));doc.text(`${score} / 100`,PW-18,Y+7.5,{align:'right'});Y+=18;hr(Y);Y+=8;
-      Y=secHead(Y,'C.  IMPROVEMENT ROADMAP');
+      Y=secHead(Y,'IMPROVEMENT TIPS');
       const tips2=[];
-      if(S.cgpa<7)tips2.push({p:'HIGH PRIORITY',c:[200,60,55],t:'Improve CGPA above 7.5. Many top companies have strict 7+ cutoffs. Attend extra sessions, clear doubts early, and prioritise scoring subjects.'});
-      if(S.code<6)tips2.push({p:'HIGH PRIORITY',c:[200,60,55],t:'Practice coding daily — 2 to 3 LeetCode problems every day. Start Easy, progress to Medium over 8 weeks. Track 100+ solved problems.'});
-      if(S.dsa<6)tips2.push({p:'HIGH PRIORITY',c:[200,60,55],t:'Master DSA: Arrays, Trees, Graphs, Dynamic Programming. These appear in every product company interview. Use Striver\'s SDE Sheet.'});
-      if(S.comm<6)tips2.push({p:'ACTION NEEDED',c:[180,140,30],t:'Build communication confidence. Practice mock GDs, record HR answers, review them. Join a public speaking club or debate society.'});
-      if(S.apt<5)tips2.push({p:'ACTION NEEDED',c:[180,140,30],t:'Strengthen aptitude — 30 min daily on IndiaBix or PrepInsta. Rotate between Quantitative, Logical Reasoning, and Verbal sections.'});
-      if(S.proj<2)tips2.push({p:'ACTION NEEDED',c:[180,140,30],t:'Build 2–3 showcase projects: a deployed full-stack app, ML model, or mobile app. Maintain a clear GitHub README with live demo link.'});
-      if(S.intern===0)tips2.push({p:'ACTION NEEDED',c:[180,140,30],t:'Secure at least one internship on Internshala, LinkedIn, or AngelList. Even 4 weeks of experience adds real credibility to your resume.'});
-      if(S.backlogs>0)tips2.push({p:'URGENT',c:[200,60,55],t:'Clear ALL backlogs immediately. Most companies auto-reject profiles with active backlogs at screening before any human reads your resume.'});
-      if(tips2.length===0)tips2.push({p:'EXCELLENT',c:[40,155,80],t:'Strong profile! Focus on FAANG-style interview prep, competitive programming, LinkedIn networking, and polishing your resume.'});
-      tips2.forEach(t=>{if(Y>PH-44){doc.addPage();doc.setFillColor(...WHITE);doc.rect(0,0,PW,PH,'F');doc.setFillColor(...NAVY);doc.rect(0,0,PW,14,'F');doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor(...WHITE);doc.text('PlaceIQ — Improvement Roadmap (continued)',14,9.5);Y=22;}const bH2=22;doc.setFillColor(250,252,255);doc.rect(14,Y,PW-28,bH2,'F');doc.setFillColor(...t.c);doc.rect(14,Y,3,bH2,'F');doc.setDrawColor(225,230,240);doc.setLineWidth(.25);doc.rect(14,Y,PW-28,bH2,'S');doc.setFillColor(...t.c.map(v=>Math.round(v+(255-v)*.85)));doc.roundedRect(19,Y+3.5,24,5,1,1,'F');doc.setFont('helvetica','bold');doc.setFontSize(5.5);doc.setTextColor(...t.c);doc.text(t.p,31,Y+7,{align:'center'});doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...MID);const lines=doc.splitTextToSize(t.t,PW-50);doc.text(lines,19,Y+14);Y+=bH2+5;});
-      const lastPg=doc.internal.getNumberOfPages();doc.setPage(lastPg);doc.setFillColor(...NAVY);doc.rect(0,PH-16,PW,16,'F');doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(140,170,210);doc.text('PlaceIQ — Placement Analytics Platform  |  Confidential — For Candidate Use Only',PW/2,PH-7,{align:'center'});doc.setTextColor(80,120,180);doc.text(`Page ${lastPg} of ${lastPg}`,PW-18,PH-7,{align:'right'});
+      if(S.cgpa<7)tips2.push({p:'HIGH',c:[200,60,55],t:'Improve CGPA above 7.5. Many top companies have strict 7+ cutoffs.'});
+      if(S.code<6)tips2.push({p:'HIGH',c:[200,60,55],t:'Practice coding daily — 2-3 LeetCode problems every day.'});
+      if(S.dsa<6)tips2.push({p:'HIGH',c:[200,60,55],t:"Master DSA: Arrays, Trees, Graphs, DP. Use Striver's SDE Sheet."});
+      if(S.comm<6)tips2.push({p:'MEDIUM',c:[180,140,30],t:'Build communication confidence. Practice mock GDs and HR answers.'});
+      if(S.proj<2)tips2.push({p:'MEDIUM',c:[180,140,30],t:'Build 2-3 showcase projects with clear GitHub READMEs.'});
+      if(S.intern===0)tips2.push({p:'MEDIUM',c:[180,140,30],t:'Secure at least one internship via Internshala or LinkedIn.'});
+      if(S.backlogs>0)tips2.push({p:'URGENT',c:[200,60,55],t:'Clear ALL backlogs immediately. Most companies auto-reject profiles with backlogs.'});
+      if(tips2.length===0)tips2.push({p:'GREAT',c:[40,155,80],t:'Strong profile! Focus on FAANG interview prep and polish your resume.'});
+      tips2.forEach(t=>{if(Y>PH-40)return;const bH2=18;doc.setFillColor(250,252,255);doc.rect(14,Y,PW-28,bH2,'F');doc.setFillColor(...t.c);doc.rect(14,Y,3,bH2,'F');doc.setFont('helvetica','bold');doc.setFontSize(6.5);doc.setTextColor(...t.c);doc.text(t.p,22,Y+7);doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor(...MID);const lines=doc.splitTextToSize(t.t,PW-50);doc.text(lines,40,Y+7);Y+=bH2+4;});
+      doc.setFillColor(...NAVY);doc.rect(0,PH-16,PW,16,'F');doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(140,170,210);doc.text('PlaceIQ — Placement Analytics Platform  |  Confidential',PW/2,PH-7,{align:'center'});
       doc.save(`PlaceIQ_Report_${S.name.replace(/\s+/g,'_')}_${score}pts.pdf`);
       btn.textContent='✓ Downloaded!';btn.disabled=false;setTimeout(()=>btn.textContent='⬇ Download PDF Report',3000);
     }catch(err){console.error(err);btn.textContent='⬇ Download PDF Report';btn.disabled=false;}
